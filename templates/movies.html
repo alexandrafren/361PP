@@ -1,0 +1,9 @@
+{% extends "navbar.html" %}
+    {% block content %}
+        <h3>Movies</h3>
+        <ul>
+        {% for key, name in template_movies|dictsort %}
+          <li>{{ key }}: {{name}} </li> 
+        {% endfor %}
+        </ul>
+    {% endblock %}
