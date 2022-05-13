@@ -2,8 +2,7 @@
     {% block content %}
         <h3>Movies</h3>
         <ul>
-        {% for key, name in template_movies|dictsort %}
-          <li>{{ key }}: {{name}} </li> 
+        {% for movie in template_movies %}
+            <li><a href=/movies/{{movie.id}}>{{movie.title}}</a></li>
         {% endfor %}
-        </ul>
     {% endblock %}

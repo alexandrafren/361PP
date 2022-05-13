@@ -1,0 +1,8 @@
+{% extends "navbar.html" %}
+    {% block content %}
+        <h3>Books</h3>
+        <ul>
+        {% for book in template_books %}
+            <li><a href=/books/{{book.id}}>{{book.title}}</a></li>
+        {% endfor %}
+    {% endblock %}

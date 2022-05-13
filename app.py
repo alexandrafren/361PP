@@ -12,6 +12,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
+# Models - To Be Moved to Seperate Function
 class Book(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(100), index = True, unique=True)
@@ -19,22 +20,28 @@ class Book(db.Model):
     author = db.Column(db.String(100), index=True, unique=False)
     release = db.Column(db.Integer, index=False, unique=False)
     #reviews = db.relationship('BookReview', backref='book', lazy='dynamic')
-""" 
-class Reviewer(db.Model):
-    id = db.Column(db.Integer, primary_key = True)
-    username = db.Column(db.String(100), index = True, unique=True)
-    book_reviews = db.relationship('BookReview', backref='reviewer', lazy='dynamic')
 
+"""
 class BookReview(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     text = db.Column(db.String(1000), index=False, unique=False)
     book_id = db.Column(db.Integer, db.ForeignKey('book.id'))
-    reviewer_id = db.Column(db.Integer, db.ForeignKey('reviewer.id')) """
+    reviewer_id = db.Column(db.Integer, db.ForeignKey('reviewer.id'))
+"""
+class List(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    title = db.Column(db.String(100), index=True, unique=True)
+    reviewer_id = db.Column(db.Integer, db.ForeignKey('reviewer.id'))
 
-#b1 = Book(title="Feed", author="Mira Grant", description="The year was 2014. We had cured cancer. We had beaten the common cold. But in doing so we created something new, something terrible that no one could stop.The infection spread, virus blocks taking over bodies and minds with one, unstoppable command: FEED. Now, twenty years after the Rising, bloggers Georgia and Shaun Mason are on the trail of the biggest story of their lives—the dark conspiracy behind the infected.The truth will get out, even if it kills them.", release=2010)
-# r1 = Reviewer(username="alixp")
-#db.session.add(b1)
-# db.session.add(r1)
+class Reviewer(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    username = db.Column(db.String(100), index = True, unique=True)
+    #book_reviews = db.relationship('BookReview', backref='reviewer', lazy='dynamic')
+    user_lists = db.relationship('List', backref="list", lazy='dynamic')
+
+class BookListLink(db.Model):
+    id = db.Column(db.Integer, db.ForeignKey('list.id'), primary_key = True)
+    book_id = db.Column(db.Integer, db.ForeignKey('book.id'), index=True, unique=True)
 
 @app.route('/')
 def home():
@@ -55,11 +62,16 @@ def games():
 @app.route('/books')
 def books():
     books_all = Book.query.all()
-    return(str(len(books_all)))
-    #return render_template("books.html", template_books=books_all)
+    return render_template("book/books.html", template_books=books_all)
+
+@app.route('/books/<int:book_id>')
+def specific_book(book_id):
+    spec_book = Book.query.get(book_id)
+    return render_template("book/book.html", template_book=spec_book)
 
 @app.route('/profile')
 def profile():
     return "Profile will be here!"
 
 app.run(host='0.0.0.0', port=5000)
+

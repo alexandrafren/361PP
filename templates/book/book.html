@@ -1,0 +1,9 @@
+{% extends "navbar.html" %}
+    {% block content %}
+        <h3>{{template_book.title | title}}</h3>
+        <p>Author: {{template_book.author}}</p>
+        <div>
+            <p>Release Date: {{template_book.release}}</p>
+            <p>Description: {{template_book.description}} </p>
+        </div>
+    {% endblock %}
