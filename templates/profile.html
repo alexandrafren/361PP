@@ -1,0 +1,11 @@
+{% extends "navbar.html" %}
+{% block content %}
+<p> This is USER's profile page!</p>
+<br />
+<p>User's Lists:</p>
+<ul>
+{% for list in template_lists %} 
+    <li><a href="#">{{list.title | title}}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

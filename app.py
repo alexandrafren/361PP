@@ -77,13 +77,27 @@ def home():
 def tv():
     return "TV will be here!"
 
+@app.route('/tv/<int:tv_id>')
+def specific_tv(tv_id):
+    return "TV will be here!"
+
 @app.route('/movies')
-def movies_loader():
+def movies():
+    return render_template("movies.html", template_movies=movies)
+
+@app.route('/movies/<int:movie_id>')
+def specific_movie(movie_id):
     return render_template("movies.html", template_movies=movies)
 
 @app.route('/games')
 def games():
-    return "Games will be here!"
+    games_all = Game.query.all()
+    return render_template("game/games.html", template_games=games_all)
+
+@app.route('/games/<int:game_id>')
+def specific_game(game_id):
+    spec_game = Game.query.get(game_id)
+    return render_template("game/game.html", template_game=spec_game)
 
 @app.route('/books')
 def books():
@@ -97,7 +111,9 @@ def specific_book(book_id):
 
 @app.route('/profile')
 def profile():
-    return "Profile will be here!"
+    # pass all of users shows, movies, games and books AND lists
+    user_lists = List.query.all()
+    return render_template("profile.html", template_lists = user_lists)
 
 app.run(host='0.0.0.0', port=5000)
 
