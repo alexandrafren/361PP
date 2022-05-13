@@ -21,6 +21,32 @@ class Book(db.Model):
     release = db.Column(db.Integer, index=False, unique=False)
     #reviews = db.relationship('BookReview', backref='book', lazy='dynamic')
 
+class Movie(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    title = db.Column(db.String(100), index = True, unique=True)
+    description = db.Column(db.String(1000), index=False, unique=False)
+    rating = db.Column(db.String(5), index=True, unique=False)
+    release = db.Column(db.Integer, index=False, unique=False)
+    #reviews = db.relationship('BookReview', backref='book', lazy='dynamic')
+
+class Show(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    title = db.Column(db.String(100), index = True, unique=True)
+    description = db.Column(db.String(1000), index=False, unique=False)
+    rating = db.Column(db.String(5), index=True, unique=False)
+    seasons = db.Column(db.Integer, index=True, unique=False)
+    release = db.Column(db.Integer, index=False, unique=False)
+    #reviews = db.relationship('BookReview', backref='book', lazy='dynamic')
+
+class Game(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    title = db.Column(db.String(100), index = True, unique=True)
+    description = db.Column(db.String(1000), index=False, unique=False)
+    rating = db.Column(db.String(5), index=True, unique=False)
+    release = db.Column(db.Integer, index=False, unique=False)
+    platforms = db.Column(db.String(50), index=False, unique=False)
+    #reviews = db.relationship('BookReview', backref='book', lazy='dynamic')
+
 """
 class BookReview(db.Model):
     id = db.Column(db.Integer, primary_key = True)
