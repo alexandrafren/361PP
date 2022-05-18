@@ -8,8 +8,16 @@
         </div>
 
         <div>
+            Reviews:
+            {% for rev in template_reviews %}
+                <div>{{rev.user}} says: </div>
+                <div>{{rev.text}}</div>
+            {% endfor %}
+        </div>
+        <br />
+        <div>
             {% for list in template_lists %}
-                <div>{{ list.title }}  <a href="/addtolist/{{list.id}}/{{template_book.id}}">Add to List</a></div>
+                <div>{{ list.title }}  <a href="/addbooktolist/{{list.id}}/{{template_book.id}}">Add to List</a></div>
             {% endfor %}
         </div>
     {% endblock %}

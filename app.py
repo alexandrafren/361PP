@@ -46,13 +46,12 @@ class Game(db.Model):
     platforms = db.Column(db.String(50), index=False, unique=False)
     #reviews = db.relationship('BookReview', backref='book', lazy='dynamic')
 
-"""
 class BookReview(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     text = db.Column(db.String(1000), index=False, unique=False)
     book_id = db.Column(db.Integer, db.ForeignKey('book.id'))
     reviewer_id = db.Column(db.Integer, db.ForeignKey('reviewer.id'))
-"""
+
 class List(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(100), index=True, unique=True)
@@ -114,7 +113,10 @@ def books():
 @app.route('/books/<int:book_id>')
 def specific_book(book_id):
     spec_book = Book.query.get(book_id)
-    return render_template("book/book.html", template_book=spec_book, template_lists = current_lists)
+    revs = BookReview.query.filter(BookReview.book_id == book_id)
+    for i, elem in enumerate(revs):
+        revs[i].user = Reviewer.query.get(elem.reviewer_id).username
+    return render_template("book/book.html", template_book=spec_book, template_lists = current_lists, template_reviews = revs)
 
 @app.route('/profile')
 def profile():
@@ -130,11 +132,12 @@ def specific_list(list_id):
         items[i] = Book.query.get(elem.book_id)
     return render_template("list.html", template_list = spec_list, template_items = items)
 
-@app.route('/addtolist/<int:new_list_id>/<int:new_book_id>')
+@app.route('/addbooktolist/<int:new_list_id>/<int:new_book_id>')
 def add_to_list(new_list_id, new_book_id):
     db.session.add(BookListLink(list_id=new_list_id, book_id=new_book_id))
     db.session.commit()
     spec_book = Book.query.get(new_book_id)
     return render_template("book/book.html", template_book=spec_book, template_lists = current_lists)
+
 app.run(host='0.0.0.0', port=5000)
 
