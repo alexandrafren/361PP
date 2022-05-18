@@ -1,10 +1,9 @@
-<!--copying book for now--> 
 {% extends "navbar.html" %}
     {% block content %}
-        <h3>{{template_book.title | title}}</h3>
-        <p>Author: {{template_book.author}}</p>
+        <h3>{{template_game.title | title}}</h3>
+        <p>Platforms: {{template_game.platforms}}</p>
         <div>
-            <p>Release Date: {{template_book.release}}</p>
-            <p>Description: {{template_book.description}} </p>
+            <p>Release Year: {{template_game.release}}</p>
+            <p>Description: {{template_game.description}} </p>
         </div>
     {% endblock %}

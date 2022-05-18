@@ -2,7 +2,9 @@ import os
 from flask import Flask, render_template, request
 from helpers.movies import movies, descriptions
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.sql import func 
+from sqlalchemy.sql import func
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import UserMixin
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -25,7 +27,6 @@ class Movie(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(100), index = True, unique=True)
     description = db.Column(db.String(1000), index=False, unique=False)
-    rating = db.Column(db.String(5), index=True, unique=False)
     release = db.Column(db.Integer, index=False, unique=False)
     #reviews = db.relationship('BookReview', backref='book', lazy='dynamic')
 
@@ -33,7 +34,6 @@ class Show(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(100), index = True, unique=True)
     description = db.Column(db.String(1000), index=False, unique=False)
-    rating = db.Column(db.String(5), index=True, unique=False)
     seasons = db.Column(db.Integer, index=True, unique=False)
     release = db.Column(db.Integer, index=False, unique=False)
     #reviews = db.relationship('BookReview', backref='book', lazy='dynamic')
@@ -42,7 +42,6 @@ class Game(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(100), index = True, unique=True)
     description = db.Column(db.String(1000), index=False, unique=False)
-    rating = db.Column(db.String(5), index=True, unique=False)
     release = db.Column(db.Integer, index=False, unique=False)
     platforms = db.Column(db.String(50), index=False, unique=False)
     #reviews = db.relationship('BookReview', backref='book', lazy='dynamic')
@@ -59,9 +58,10 @@ class List(db.Model):
     title = db.Column(db.String(100), index=True, unique=True)
     reviewer_id = db.Column(db.Integer, db.ForeignKey('reviewer.id'))
 
-class Reviewer(db.Model):
+class Reviewer(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key = True)
     username = db.Column(db.String(100), index = True, unique=True)
+    password_hash = db.Column(db.String(128))
     #book_reviews = db.relationship('BookReview', backref='reviewer', lazy='dynamic')
     user_lists = db.relationship('List', backref="list", lazy='dynamic')
 
@@ -75,19 +75,23 @@ def home():
 
 @app.route('/tv')
 def tv():
-    return "TV will be here!"
+    shows_all = Show.query.all()
+    return render_template("tv/tvs.html", template_shows=shows_all)
 
 @app.route('/tv/<int:tv_id>')
 def specific_tv(tv_id):
-    return "TV will be here!"
+    spec_show = Show.query.get(tv_id)
+    return render_template("tv/tv.html", template_show=spec_show)
 
 @app.route('/movies')
 def movies():
-    return render_template("movies.html", template_movies=movies)
+    movies_all = Movie.query.all()
+    return render_template("movie/movies.html", template_movies=movies_all)
 
 @app.route('/movies/<int:movie_id>')
 def specific_movie(movie_id):
-    return render_template("movies.html", template_movies=movies)
+    spec_movie = Movie.query.get(movie_id)
+    return render_template("movie/movie.html", template_movie=spec_movie)
 
 @app.route('/games')
 def games():
