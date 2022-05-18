@@ -5,6 +5,8 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+import requests as requests
+import json
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -21,6 +23,7 @@ class Book(db.Model):
     description = db.Column(db.String(1000), index=False, unique=False)
     author = db.Column(db.String(100), index=True, unique=False)
     release = db.Column(db.Integer, index=False, unique=False)
+    image = db.Column(db.Text(5000))
     #reviews = db.relationship('BookReview', backref='book', lazy='dynamic')
 
 class Movie(db.Model):
@@ -69,8 +72,21 @@ class BookListLink(db.Model):
     list_id = db.Column(db.Integer, db.ForeignKey('list.id'), index=True)  
     book_id = db.Column(db.Integer, db.ForeignKey('book.id'), index=True)
 
+
+
+# on start up - testing microservice integration!
+
 current_user = Reviewer.query.get(1)
 current_lists = items = List.query.filter(List.reviewer_id == current_user.id).all()
+
+product_dict = {"product": "feed newsflesh paperback"}
+product_json = json.dumps(product_dict, indent=4)
+details = requests.get("http://127.0.0.1:5000/", json=product_json)
+b1 = Book.query.filter(Book.title=="Feed").first()
+b1.image = details.json()['product_image']
+db.session.commit()
+print()
+
 @app.route('/')
 def home():
     return render_template("index.html")
@@ -139,5 +155,5 @@ def add_to_list(new_list_id, new_book_id):
     spec_book = Book.query.get(new_book_id)
     return render_template("book/book.html", template_book=spec_book, template_lists = current_lists)
 
-app.run(host='0.0.0.0', port=5000)
+app.run(host='0.0.0.0', port=5001)
 
