@@ -5,7 +5,7 @@
 <p>User's Lists:</p>
 <ul>
 {% for list in template_lists %} 
-    <li><a href="#">{{list.title | title}}</a></li>
+    <li><a href="/lists/{{list.id}}">{{list.title | title}}</a></li>
 {% endfor %}
 </ul>
 {% endblock %}

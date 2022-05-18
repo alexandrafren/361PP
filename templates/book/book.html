@@ -6,4 +6,10 @@
             <p>Release Date: {{template_book.release}}</p>
             <p>Description: {{template_book.description}} </p>
         </div>
+
+        <div>
+            {% for list in template_lists %}
+                <div>{{ list.title }}  <a href="/addtolist/{{list.id}}/{{template_book.id}}">Add to List</a></div>
+            {% endfor %}
+        </div>
     {% endblock %}

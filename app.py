@@ -66,9 +66,12 @@ class Reviewer(UserMixin, db.Model):
     user_lists = db.relationship('List', backref="list", lazy='dynamic')
 
 class BookListLink(db.Model):
-    id = db.Column(db.Integer, db.ForeignKey('list.id'), primary_key = True)
-    book_id = db.Column(db.Integer, db.ForeignKey('book.id'), index=True, unique=True)
+    id = db.Column(db.Integer, primary_key = True)
+    list_id = db.Column(db.Integer, db.ForeignKey('list.id'), index=True)  
+    book_id = db.Column(db.Integer, db.ForeignKey('book.id'), index=True)
 
+current_user = Reviewer.query.get(1)
+current_lists = items = List.query.filter(List.reviewer_id == current_user.id).all()
 @app.route('/')
 def home():
     return render_template("index.html")
@@ -81,7 +84,7 @@ def tv():
 @app.route('/tv/<int:tv_id>')
 def specific_tv(tv_id):
     spec_show = Show.query.get(tv_id)
-    return render_template("tv/tv.html", template_show=spec_show)
+    return render_template("tv/tv.html", template_show=spec_show, template_lists = current_lists)
 
 @app.route('/movies')
 def movies():
@@ -91,7 +94,7 @@ def movies():
 @app.route('/movies/<int:movie_id>')
 def specific_movie(movie_id):
     spec_movie = Movie.query.get(movie_id)
-    return render_template("movie/movie.html", template_movie=spec_movie)
+    return render_template("movie/movie.html", template_movie=spec_movie, template_lists = current_lists)
 
 @app.route('/games')
 def games():
@@ -101,7 +104,7 @@ def games():
 @app.route('/games/<int:game_id>')
 def specific_game(game_id):
     spec_game = Game.query.get(game_id)
-    return render_template("game/game.html", template_game=spec_game)
+    return render_template("game/game.html", template_game=spec_game, template_lists = current_lists)
 
 @app.route('/books')
 def books():
@@ -111,13 +114,27 @@ def books():
 @app.route('/books/<int:book_id>')
 def specific_book(book_id):
     spec_book = Book.query.get(book_id)
-    return render_template("book/book.html", template_book=spec_book)
+    return render_template("book/book.html", template_book=spec_book, template_lists = current_lists)
 
 @app.route('/profile')
 def profile():
     # pass all of users shows, movies, games and books AND lists
-    user_lists = List.query.all()
-    return render_template("profile.html", template_lists = user_lists)
+    return render_template("profile.html", template_lists = current_lists)
 
+@app.route('/lists/<int:list_id>')
+def specific_list(list_id):
+    # pass all of users shows, movies, games and books AND lists
+    spec_list = List.query.get(list_id)
+    items = BookListLink.query.filter(BookListLink.list_id == list_id).all()
+    for i, elem in enumerate(items):
+        items[i] = Book.query.get(elem.book_id)
+    return render_template("list.html", template_list = spec_list, template_items = items)
+
+@app.route('/addtolist/<int:new_list_id>/<int:new_book_id>')
+def add_to_list(new_list_id, new_book_id):
+    db.session.add(BookListLink(list_id=new_list_id, book_id=new_book_id))
+    db.session.commit()
+    spec_book = Book.query.get(new_book_id)
+    return render_template("book/book.html", template_book=spec_book, template_lists = current_lists)
 app.run(host='0.0.0.0', port=5000)
 

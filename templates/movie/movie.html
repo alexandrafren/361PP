@@ -5,4 +5,10 @@
             <p>Release Date: {{template_movie.release}}</p>
             <p>Description: {{template_movie.description}} </p>
         </div>
+
+        <div>
+            {% for list in template_lists %}
+                <div>{{ list.title }}  <a href="/addtolist/{{list.id}}/{{template.movie.title}}">Add to List</a></div>
+            {% endfor %}
+        </div>
     {% endblock %}
