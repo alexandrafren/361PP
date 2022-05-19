@@ -1,6 +1,6 @@
 {% extends "navbar.html" %}
 {% block content %}
-<p> This is USER's profile page!</p>
+<p> This is {{cur_user.username}}'s profile page!</p>
 <br />
 <p>User's Lists:</p>
 <ul>
@@ -8,4 +8,8 @@
     <li><a href="/lists/{{list.id}}">{{list.title | title}}</a></li>
 {% endfor %}
 </ul>
+{% for review in template_reviews %} 
+    <a href="books/{{review.book.id}}"> {{ review.book.title }} </a>
+    {{ review.text }}
+{% endfor %}
 {% endblock %}

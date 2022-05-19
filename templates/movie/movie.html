@@ -8,7 +8,7 @@
 
         <div>
             {% for list in template_lists %}
-                <div>{{ list.title }}  <a href="/addtolist/{{list.id}}/{{template.movie.title}}">Add to List</a></div>
+                <div>{{ list.title }}  <a href="/addtolist/{{list.id}}/{{template_movie.title}}">Add to List</a></div>
             {% endfor %}
         </div>
     {% endblock %}

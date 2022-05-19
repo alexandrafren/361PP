@@ -137,7 +137,10 @@ def specific_book(book_id):
 @app.route('/profile')
 def profile():
     # pass all of users shows, movies, games and books AND lists
-    return render_template("profile.html", template_lists = current_lists)
+    rec_reviews = BookReview.query.filter(BookReview.reviewer_id == current_user.id).all()
+    for i, elem in enumerate(rec_reviews):
+        rec_reviews[i].book = Book.query.get(elem.book_id)
+    return render_template("profile.html", template_lists = current_lists, cur_user=current_user, template_reviews=rec_reviews)
 
 @app.route('/lists/<int:list_id>')
 def specific_list(list_id):
