@@ -31,6 +31,7 @@ class Movie(db.Model):
     title = db.Column(db.String(100), index = True, unique=True)
     description = db.Column(db.String(1000), index=False, unique=False)
     release = db.Column(db.Integer, index=False, unique=False)
+    image = db.Column(db.Text(5000))
     #reviews = db.relationship('BookReview', backref='book', lazy='dynamic')
 
 class Show(db.Model):
@@ -39,6 +40,7 @@ class Show(db.Model):
     description = db.Column(db.String(1000), index=False, unique=False)
     seasons = db.Column(db.Integer, index=True, unique=False)
     release = db.Column(db.Integer, index=False, unique=False)
+    image = db.Column(db.Text(5000))
     #reviews = db.relationship('BookReview', backref='book', lazy='dynamic')
 
 class Game(db.Model):
@@ -47,6 +49,7 @@ class Game(db.Model):
     description = db.Column(db.String(1000), index=False, unique=False)
     release = db.Column(db.Integer, index=False, unique=False)
     platforms = db.Column(db.String(50), index=False, unique=False)
+    image = db.Column(db.Text(5000))
     #reviews = db.relationship('BookReview', backref='book', lazy='dynamic')
 
 class BookReview(db.Model):
@@ -75,10 +78,6 @@ class BookListLink(db.Model):
 
 
 # on start up - testing microservice integration!
-
-current_user = Reviewer.query.get(1)
-current_lists = items = List.query.filter(List.reviewer_id == current_user.id).all()
-
 product_dict = {"product": "feed newsflesh paperback"}
 product_json = json.dumps(product_dict, indent=4)
 details = requests.get("http://127.0.0.1:5000/", json=product_json)
@@ -86,6 +85,15 @@ b1 = Book.query.filter(Book.title=="Feed").first()
 b1.image = details.json()['product_image']
 db.session.commit()
 print()
+
+#GET METHODS
+def get_current_user():
+    # UPDATE THIS ONCE AUTHENTICATION IS IMPLEMENTED
+    return Reviewer.query.get(1)
+
+def get_current_lists():
+    current_user = get_current_user()
+    return List.query.filter(List.reviewer_id == current_user.id).all()
 
 @app.route('/')
 def home():
@@ -99,7 +107,7 @@ def tv():
 @app.route('/tv/<int:tv_id>')
 def specific_tv(tv_id):
     spec_show = Show.query.get(tv_id)
-    return render_template("tv/tv.html", template_show=spec_show, template_lists = current_lists)
+    return render_template("tv/tv.html", template_show=spec_show, template_lists = get_current_lists())
 
 @app.route('/movies')
 def movies():
@@ -109,7 +117,7 @@ def movies():
 @app.route('/movies/<int:movie_id>')
 def specific_movie(movie_id):
     spec_movie = Movie.query.get(movie_id)
-    return render_template("movie/movie.html", template_movie=spec_movie, template_lists = current_lists)
+    return render_template("movie/movie.html", template_movie=spec_movie, template_lists = get_current_lists())
 
 @app.route('/games')
 def games():
@@ -119,7 +127,7 @@ def games():
 @app.route('/games/<int:game_id>')
 def specific_game(game_id):
     spec_game = Game.query.get(game_id)
-    return render_template("game/game.html", template_game=spec_game, template_lists = current_lists)
+    return render_template("game/game.html", template_game=spec_game, template_lists = get_current_lists())
 
 @app.route('/books')
 def books():
@@ -132,15 +140,16 @@ def specific_book(book_id):
     revs = BookReview.query.filter(BookReview.book_id == book_id)
     for i, elem in enumerate(revs):
         revs[i].user = Reviewer.query.get(elem.reviewer_id).username
-    return render_template("book/book.html", template_book=spec_book, template_lists = current_lists, template_reviews = revs)
+    return render_template("book/book.html", template_book=spec_book, template_lists = get_current_lists(), template_reviews = revs)
 
 @app.route('/profile')
 def profile():
     # pass all of users shows, movies, games and books AND lists
+    current_user = get_current_user()
     rec_reviews = BookReview.query.filter(BookReview.reviewer_id == current_user.id).all()
     for i, elem in enumerate(rec_reviews):
         rec_reviews[i].book = Book.query.get(elem.book_id)
-    return render_template("profile.html", template_lists = current_lists, cur_user=current_user, template_reviews=rec_reviews)
+    return render_template("profile.html", template_lists = get_current_lists(), cur_user=current_user, template_reviews=rec_reviews)
 
 @app.route('/lists/<int:list_id>')
 def specific_list(list_id):
@@ -156,7 +165,7 @@ def add_to_list(new_list_id, new_book_id):
     db.session.add(BookListLink(list_id=new_list_id, book_id=new_book_id))
     db.session.commit()
     spec_book = Book.query.get(new_book_id)
-    return render_template("book/book.html", template_book=spec_book, template_lists = current_lists)
+    return render_template("book/book.html", template_book=spec_book, template_lists = get_current_lists())
 
 app.run(host='0.0.0.0', port=5001)
 
