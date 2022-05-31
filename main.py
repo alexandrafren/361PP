@@ -1,5 +1,6 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Blueprint
+from __init__ import db, create_app
 from helpers.movies import movies, descriptions
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
@@ -7,14 +8,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 import requests as requests
 import json
+import string
 
-basedir = os.path.abspath(os.path.dirname(__file__))
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'database.db')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-db = SQLAlchemy(app)
+main = create_app()
 
 # Models - To Be Moved to Seperate Function
 class Book(db.Model):
@@ -75,16 +71,18 @@ class BookListLink(db.Model):
     list_id = db.Column(db.Integer, db.ForeignKey('list.id'), index=True)  
     book_id = db.Column(db.Integer, db.ForeignKey('book.id'), index=True)
 
-
-
 # on start up - testing microservice integration!
-product_dict = {"product": "feed newsflesh paperback"}
-product_json = json.dumps(product_dict, indent=4)
-details = requests.get("http://127.0.0.1:5000/", json=product_json)
-b1 = Book.query.filter(Book.title=="Feed").first()
-b1.image = details.json()['product_image']
-db.session.commit()
-print()
+"""
+shows_all = Show.query.all()
+for show in shows_all:
+    translator = str.maketrans('', '', string.punctuation)
+    title = show.title.translate(translator)
+    product_dict = {"product": show.title + " tv show"}
+    product_json = json.dumps(product_dict, indent=4)
+    details = requests.get("http://127.0.0.1:5000/", json=product_json)
+    show.image = details.json()['product_image']
+    db.session.commit()
+"""
 
 #GET METHODS
 def get_current_user():
@@ -95,46 +93,46 @@ def get_current_lists():
     current_user = get_current_user()
     return List.query.filter(List.reviewer_id == current_user.id).all()
 
-@app.route('/')
+@main.route('/')
 def home():
     return render_template("index.html")
 
-@app.route('/tv')
+@main.route('/tv')
 def tv():
     shows_all = Show.query.all()
     return render_template("tv/tvs.html", template_shows=shows_all)
 
-@app.route('/tv/<int:tv_id>')
+@main.route('/tv/<int:tv_id>')
 def specific_tv(tv_id):
     spec_show = Show.query.get(tv_id)
     return render_template("tv/tv.html", template_show=spec_show, template_lists = get_current_lists())
 
-@app.route('/movies')
+@main.route('/movies')
 def movies():
     movies_all = Movie.query.all()
     return render_template("movie/movies.html", template_movies=movies_all)
 
-@app.route('/movies/<int:movie_id>')
+@main.route('/movies/<int:movie_id>')
 def specific_movie(movie_id):
     spec_movie = Movie.query.get(movie_id)
     return render_template("movie/movie.html", template_movie=spec_movie, template_lists = get_current_lists())
 
-@app.route('/games')
+@main.route('/games')
 def games():
     games_all = Game.query.all()
     return render_template("game/games.html", template_games=games_all)
 
-@app.route('/games/<int:game_id>')
+@main.route('/games/<int:game_id>')
 def specific_game(game_id):
     spec_game = Game.query.get(game_id)
     return render_template("game/game.html", template_game=spec_game, template_lists = get_current_lists())
 
-@app.route('/books')
+@main.route('/books')
 def books():
     books_all = Book.query.all()
     return render_template("book/books.html", template_books=books_all)
 
-@app.route('/books/<int:book_id>')
+@main.route('/books/<int:book_id>')
 def specific_book(book_id):
     spec_book = Book.query.get(book_id)
     revs = BookReview.query.filter(BookReview.book_id == book_id)
@@ -142,7 +140,7 @@ def specific_book(book_id):
         revs[i].user = Reviewer.query.get(elem.reviewer_id).username
     return render_template("book/book.html", template_book=spec_book, template_lists = get_current_lists(), template_reviews = revs)
 
-@app.route('/profile')
+@main.route('/profile')
 def profile():
     # pass all of users shows, movies, games and books AND lists
     current_user = get_current_user()
@@ -151,7 +149,7 @@ def profile():
         rec_reviews[i].book = Book.query.get(elem.book_id)
     return render_template("profile.html", template_lists = get_current_lists(), cur_user=current_user, template_reviews=rec_reviews)
 
-@app.route('/lists/<int:list_id>')
+@main.route('/lists/<int:list_id>')
 def specific_list(list_id):
     # pass all of users shows, movies, games and books AND lists
     spec_list = List.query.get(list_id)
@@ -160,12 +158,24 @@ def specific_list(list_id):
         items[i] = Book.query.get(elem.book_id)
     return render_template("list.html", template_list = spec_list, template_items = items)
 
-@app.route('/addbooktolist/<int:new_list_id>/<int:new_book_id>')
+@main.route('/addbooktolist/<int:new_list_id>/<int:new_book_id>')
 def add_to_list(new_list_id, new_book_id):
     db.session.add(BookListLink(list_id=new_list_id, book_id=new_book_id))
     db.session.commit()
     spec_book = Book.query.get(new_book_id)
     return render_template("book/book.html", template_book=spec_book, template_lists = get_current_lists())
 
-app.run(host='0.0.0.0', port=5001)
+@main.route('/login')
+def login():
+    return render_template('login.html')
+
+@main.route('/signup')
+def signup():
+    return render_template('signup.html')
+
+@main.route('/logout')
+def logout():
+    return 'Logout'
+
+main.run(host='0.0.0.0', port=5001)
 
