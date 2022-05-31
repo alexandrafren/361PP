@@ -93,7 +93,10 @@ def get_current_user():
 
 def get_current_lists():
     current_user = get_current_user()
-    return List.query.filter(List.reviewer_id == current_user.id).all()
+    if current_user is not None:
+        return List.query.filter(List.reviewer_id == current_user.id).all()
+    else:
+        return None
 
 def set_current_user(user):
     # UPDATE THIS ONCE AUTHENTICATION IS IMPLEMENTED
@@ -152,6 +155,8 @@ def specific_book(book_id):
 def profile():
     # pass all of users shows, movies, games and books AND lists
     current_user = get_current_user()
+    if current_user is None:
+        return redirect(url_for('login'))
     rec_reviews = BookReview.query.filter(BookReview.reviewer_id == current_user.id).all()
     for i, elem in enumerate(rec_reviews):
         rec_reviews[i].book = Book.query.get(elem.book_id)
@@ -181,7 +186,6 @@ def login():
 def login_post():
     username = request.form.get('username')
     password = request.form.get('password')
-    remember = True if request.form.get('remember') else False
     reviewer = Reviewer.query.filter_by(username=username).first()
     if not reviewer or not check_password_hash(reviewer.password_hash, password):
         flash('Please check your login details and try again.')

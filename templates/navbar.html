@@ -1,17 +1,35 @@
 <html>
     <head>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
     </head>
     <body>
-        <h1 id="titlebar"><a href="/">Untitled Zombie Tracker</a></h1>
-        <ul id="navbar">
-            <li><a href="/tv">TV</a></li>
-            <li><a href="/movies">Movies</a></li>
-            <li><a href="/books">Books</a></li>
-            <li><a href="/games">Games</a></li>
-            <li style="float:right; margin:0px;"><a href="/profile">Profile</a></li>
-        </ul>
-        {% block content %} {% endblock %}
+        <section class="hero is-primary is-fullheight">
+            <h1 class="title" style="text-align: center;"> Untitled Zombie Tracker</h1>
+            <div class="hero-head">
+                <nav class="navbar">
+                    <div class="container">
+                        <div id="navbarMenuHeroA">
+                            <div class="navbar-end">
+                                <a href="/tv" class="navbar-item">TV</a>
+                                <a href="/movies" class="navbar-item">Movies</a>
+                                <a href="/books" class="navbar-item">Books</a>
+                                <a href="/games" class="navbar-item">Games</a>
+                                <a href="/profile" class="navbar-item">Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="hero-body">
+                <div class="container has-text-centered">
+            {% block content %} {% endblock %}
+                </div>
+            </div>
+        </section>
     </body>
 </html>
 
