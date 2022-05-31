@@ -8,11 +8,12 @@
     <li><a href="/lists/{{list.id}}">{{list.title | title}}</a></li>
 {% endfor %}
 </ul>
-<div>New List: </div>
+<div>New List:
     <form method="POST" action="/newlist">
         <input class="input" type="text" name="listname" placeholder="New List Name ... ">
         <button class="button">Add</button>
     </form>
+</div>
 {% for review in template_reviews %} 
     <a href="books/{{review.book.id}}"> {{ review.book.title }} </a>
     {{ review.text }}

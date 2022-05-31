@@ -119,6 +119,15 @@ def new_list():
     db.session.commit()
     return redirect(url_for('profile'))
 
+@main.route('/newreview', methods=['POST'])
+def new_list():
+    title = request.form.get('listname')
+    if logged_in() and title != None:
+        reviewer = get_current_user()
+    newlist = List(title=title, reviewer_id = reviewer.id)
+    db.session.add(newlist)
+    db.session.commit()
+    return redirect(url_for('profile'))
 
 @main.route('/lists/<int:list_id>')
 def specific_list(list_id):
