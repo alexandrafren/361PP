@@ -1,8 +1,9 @@
-/*
-* {
-    background-color: rgb(124, 78, 86);
+
+body {
+    background-color: grey;
 }
 
+/*
 #navbar li {
     display: inline;
     background-color: black;

@@ -9,69 +9,11 @@ from flask_login import UserMixin
 import requests as requests
 import json
 import string
+from models import Book, Movie, Show, Game, Reviewer, BookListLink, BookReview, List
 
 main = create_app()
 global current_user
 current_user = None
-
-# Models - To Be Moved to Seperate Function
-class Book(db.Model):
-    id = db.Column(db.Integer, primary_key = True)
-    title = db.Column(db.String(100), index = True, unique=True)
-    description = db.Column(db.String(1000), index=False, unique=False)
-    author = db.Column(db.String(100), index=True, unique=False)
-    release = db.Column(db.Integer, index=False, unique=False)
-    image = db.Column(db.Text(5000))
-    #reviews = db.relationship('BookReview', backref='book', lazy='dynamic')
-
-class Movie(db.Model):
-    id = db.Column(db.Integer, primary_key = True)
-    title = db.Column(db.String(100), index = True, unique=True)
-    description = db.Column(db.String(1000), index=False, unique=False)
-    release = db.Column(db.Integer, index=False, unique=False)
-    image = db.Column(db.Text(5000))
-    #reviews = db.relationship('BookReview', backref='book', lazy='dynamic')
-
-class Show(db.Model):
-    id = db.Column(db.Integer, primary_key = True)
-    title = db.Column(db.String(100), index = True, unique=True)
-    description = db.Column(db.String(1000), index=False, unique=False)
-    seasons = db.Column(db.Integer, index=True, unique=False)
-    release = db.Column(db.Integer, index=False, unique=False)
-    image = db.Column(db.Text(5000))
-    #reviews = db.relationship('BookReview', backref='book', lazy='dynamic')
-
-class Game(db.Model):
-    id = db.Column(db.Integer, primary_key = True)
-    title = db.Column(db.String(100), index = True, unique=True)
-    description = db.Column(db.String(1000), index=False, unique=False)
-    release = db.Column(db.Integer, index=False, unique=False)
-    platforms = db.Column(db.String(50), index=False, unique=False)
-    image = db.Column(db.Text(5000))
-    #reviews = db.relationship('BookReview', backref='book', lazy='dynamic')
-
-class BookReview(db.Model):
-    id = db.Column(db.Integer, primary_key = True)
-    text = db.Column(db.String(1000), index=False, unique=False)
-    book_id = db.Column(db.Integer, db.ForeignKey('book.id'))
-    reviewer_id = db.Column(db.Integer, db.ForeignKey('reviewer.id'))
-
-class List(db.Model):
-    id = db.Column(db.Integer, primary_key = True)
-    title = db.Column(db.String(100), index=True, unique=True)
-    reviewer_id = db.Column(db.Integer, db.ForeignKey('reviewer.id'))
-
-class Reviewer(UserMixin, db.Model):
-    id = db.Column(db.Integer, primary_key = True)
-    username = db.Column(db.String(100), index = True, unique=True)
-    password_hash = db.Column(db.String(128))
-    #book_reviews = db.relationship('BookReview', backref='reviewer', lazy='dynamic')
-    user_lists = db.relationship('List', backref="list", lazy='dynamic')
-
-class BookListLink(db.Model):
-    id = db.Column(db.Integer, primary_key = True)
-    list_id = db.Column(db.Integer, db.ForeignKey('list.id'), index=True)  
-    book_id = db.Column(db.Integer, db.ForeignKey('book.id'), index=True)
 
 # on start up - testing microservice integration!
 """
