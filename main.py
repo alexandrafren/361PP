@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, Blueprint
+from flask import Flask, render_template, request, redirect, url_for, flash
 from __init__ import db, create_app
 from helpers.movies import movies, descriptions
 from flask_sqlalchemy import SQLAlchemy
@@ -11,6 +11,8 @@ import json
 import string
 
 main = create_app()
+global current_user
+current_user = None
 
 # Models - To Be Moved to Seperate Function
 class Book(db.Model):
@@ -87,11 +89,17 @@ for show in shows_all:
 #GET METHODS
 def get_current_user():
     # UPDATE THIS ONCE AUTHENTICATION IS IMPLEMENTED
-    return Reviewer.query.get(1)
+    return current_user
 
 def get_current_lists():
     current_user = get_current_user()
     return List.query.filter(List.reviewer_id == current_user.id).all()
+
+def set_current_user(user):
+    # UPDATE THIS ONCE AUTHENTICATION IS IMPLEMENTED
+    global current_user
+    current_user = user
+
 
 @main.route('/')
 def home():
@@ -169,9 +177,35 @@ def add_to_list(new_list_id, new_book_id):
 def login():
     return render_template('login.html')
 
+@main.route('/login', methods=['POST'])
+def login_post():
+    username = request.form.get('username')
+    password = request.form.get('password')
+    remember = True if request.form.get('remember') else False
+    reviewer = Reviewer.query.filter_by(username=username).first()
+    if not reviewer or not check_password_hash(reviewer.password_hash, password):
+        flash('Please check your login details and try again.')
+        return render_template('login.html')
+    set_current_user(reviewer)
+    return redirect(url_for('profile'))
+
 @main.route('/signup')
 def signup():
     return render_template('signup.html')
+
+@main.route('/signup', methods=['POST'])
+def signup_post():
+    # validate and add user to the database
+    username = request.form.get('username')
+    password = request.form.get('password')
+    reviewer = Reviewer.query.filter_by(username=username).first()
+    if reviewer:
+        flash('Email address already in use')
+        return redirect(url_for('signup'))
+    new_reviewer = Reviewer(username=username, password_hash=generate_password_hash(password, method='sha256'))
+    db.session.add(new_reviewer)
+    db.session.commit()
+    return redirect(url_for('login'))
 
 @main.route('/logout')
 def logout():
