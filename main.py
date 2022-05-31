@@ -45,6 +45,11 @@ def set_current_user(user):
     global current_user
     current_user = user
 
+def logged_in():
+    if current_user == None:
+        return False
+    else:
+        return True
 
 @main.route('/')
 def home():
@@ -103,6 +108,17 @@ def profile():
     for i, elem in enumerate(rec_reviews):
         rec_reviews[i].book = Book.query.get(elem.book_id)
     return render_template("profile.html", template_lists = get_current_lists(), cur_user=current_user, template_reviews=rec_reviews)
+
+@main.route('/newlist', methods=['POST'])
+def new_list():
+    title = request.form.get('listname')
+    if logged_in() and title != None:
+        reviewer = get_current_user()
+    newlist = List(title=title, reviewer_id = reviewer.id)
+    db.session.add(newlist)
+    db.session.commit()
+    return redirect(url_for('profile'))
+
 
 @main.route('/lists/<int:list_id>')
 def specific_list(list_id):
