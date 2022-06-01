@@ -53,7 +53,11 @@ def logged_in():
 
 @main.route('/')
 def home():
-    return render_template("index.html")
+    books = Book.query.limit(10).all()
+    shows = Show.query.limit(10).all()
+    movies = Movie.query.limit(10).all()
+    games = Game.query.limit(10).all()
+    return render_template("index.html", template_books=books, template_shows = shows, template_movies = movies, template_games = games)
 
 @main.route('/tv')
 def tv():
@@ -120,14 +124,17 @@ def new_list():
     return redirect(url_for('profile'))
 
 @main.route('/newreview', methods=['POST'])
-def new_list():
-    title = request.form.get('listname')
-    if logged_in() and title != None:
+def new_review():
+    text = request.form.get('review')
+    book_id = request.form.get('book_id')
+    if logged_in() and text != None:
         reviewer = get_current_user()
-    newlist = List(title=title, reviewer_id = reviewer.id)
-    db.session.add(newlist)
+    newreview = BookReview(text=text, book_id=book_id, reviewer_id = reviewer.id )
+    db.session.add(newreview)
     db.session.commit()
-    return redirect(url_for('profile'))
+    spec_book = Book.query.get(book_id)
+    revs = BookReview.query.filter(BookReview.book_id == book_id)
+    return render_template("book/book.html", template_book=spec_book, template_lists = get_current_lists(), template_reviews = revs)
 
 @main.route('/lists/<int:list_id>')
 def specific_list(list_id):
