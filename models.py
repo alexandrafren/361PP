@@ -17,6 +17,7 @@ class Book(db.Model):
     title = db.Column(db.String(100), index = True, unique=True)
     description = db.Column(db.String(1000), index=False, unique=False)
     author = db.Column(db.String(100), index=True, unique=False)
+    artist = db.Column(db.String(300))
     release = db.Column(db.Integer, index=False, unique=False)
     image = db.Column(db.Text(5000))
 

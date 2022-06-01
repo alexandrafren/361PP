@@ -3,6 +3,7 @@ https://www.digitalocean.com/community/tutorials/how-to-add-authentication-to-yo
 
 
 Seed Data:
+Stored: https://docs.google.com/spreadsheets/d/14FEp7v6DWOT7JIexWhf3h1lxYZcCd9g9fUHPelFLQLc/edit#gid=0 
 Video Games: https://en.wikipedia.org/wiki/List_of_zombie_video_games
 Books: https://en.wikipedia.org/wiki/List_of_zombie_novels
 Movies: https://en.wikipedia.org/wiki/List_of_zombie_films
