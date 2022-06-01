@@ -6,6 +6,10 @@ class Reviewer(db.Model):
     username = db.Column(db.String(100), index = True, unique=True)
     password_hash = db.Column(db.String(128))
     user_lists = db.relationship('List', backref="list", lazy='dynamic')
+    book_count = db.Column(db.Integer, index=False, unique=False)
+    movie_count = db.Column(db.Integer, index=False, unique=False)
+    game_count = db.Column(db.Integer, index=False, unique=False)
+    show_count = db.Column(db.Integer, index=False, unique=False)
 
 # Media Items
 class Book(db.Model):
@@ -45,25 +49,29 @@ class BookReview(db.Model):
     text = db.Column(db.String(1000), index=False, unique=False)
     book_id = db.Column(db.Integer, db.ForeignKey('book.id'))
     reviewer_id = db.Column(db.Integer, db.ForeignKey('reviewer.id'))
+    consumed = db.Column(db.Boolean)
 
 class MovieReview(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     text = db.Column(db.String(1000), index=False, unique=False)
     movie_id = db.Column(db.Integer, db.ForeignKey('movie.id'))
     reviewer_id = db.Column(db.Integer, db.ForeignKey('reviewer.id'))
+    consumed = db.Column(db.Boolean)
 
 class ShowReview(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     text = db.Column(db.String(1000), index=False, unique=False)
     show_id = db.Column(db.Integer, db.ForeignKey('show.id'))
     reviewer_id = db.Column(db.Integer, db.ForeignKey('reviewer.id'))
+    consumed = db.Column(db.Boolean)
 
 class GameReview(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     text = db.Column(db.String(1000), index=False, unique=False)
     game_id = db.Column(db.Integer, db.ForeignKey('game.id'))
     reviewer_id = db.Column(db.Integer, db.ForeignKey('reviewer.id'))
-
+    consumed = db.Column(db.Boolean)
+    
 # Lists and List Helper Models
 class List(db.Model):
     id = db.Column(db.Integer, primary_key = True)
