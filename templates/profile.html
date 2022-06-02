@@ -2,26 +2,35 @@
 {% block content %}
 <p> This is {{cur_user.username}}'s profile page!</p>
 <br />
-<p> You've watched {{cur_user.movie_count}} of 582 zombie movies.</p>
-<p><a href="/movies">Browse movies...</a></p>
-<p> You've watched {{cur_user.show_count}} of X shows.</p>
-<p><a href="/tv">Browse shows...</a></p>
-<p> You've read {{cur_user.book_count}} of 126 zombie books and comics.</p>
-<p><a href="/books">Browse books & comics...</a></p>
-<p> You've played {{cur_user.game_count}} of 146 zombie video games.</p>
-<p><a href="/books">Browse books & comics...</a></p>
-<p>User's Lists:</p>
-<ul>
-{% for list in template_lists %} 
-    <li><a href="/lists/{{list.id}}">{{list.title | title}}</a></li>
-{% endfor %}
-</ul>
-<div>New List:
-    <form method="POST" action="/newlist">
-        <input class="input" type="text" name="listname" placeholder="New List Name ... ">
-        <button class="button">Add</button>
-    </form>
+<div class="columns">
+    <div class="column">
+        <div style="border: 1px solid black">
+        <p> You've watched {{cur_user.movie_count}} of 582 zombie movies.</p>
+        <p><a href="/movies">Browse movies...</a></p>
+        <p> You've watched {{cur_user.show_count}} of X shows.</p>
+        <p><a href="/tv">Browse shows...</a></p>
+        <p> You've read {{cur_user.book_count}} of 126 zombie books and comics.</p>
+        <p><a href="/books">Browse books & comics...</a></p>
+        <p> You've played {{cur_user.game_count}} of 146 zombie video games.</p>
+        <p><a href="/books">Browse games...</a></p>
+        </div>
+    </div>
+    <div class="column">
+        <p>User's Lists:</p>
+        <ul>
+        {% for list in template_lists %} 
+            <li><a href="/lists/{{list.id}}">{{list.title | title}}</a></li>
+        {% endfor %}
+        </ul>
+        <div>New List:
+            <form method="POST" action="/newlist">
+                <input class="input" type="text" name="listname" placeholder="New List Name ... ">
+                <button class="button">Add</button>
+            </form>
+        </div>
+    </div>
 </div>
+<p>User Reviews:</p>
 {% for review in template_reviews %} 
     <a href="books/{{review.book.id}}"> {{ review.book.title }} </a>
     {{ review.text }}

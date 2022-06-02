@@ -6,4 +6,10 @@
             <p>Description: {{template_show.description}} </p>
         </div>
         <div><img src="{{template_show.image}}"></img></div>
+        <br />
+        <div>
+            {% for list in template_lists %}
+                <div>{{ list.title }}  <a href="/addshowtolist/{{list.id}}/{{template_show.id}}">Add to List</a></div>
+            {% endfor %}
+        </div>
     {% endblock %}

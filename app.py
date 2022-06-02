@@ -38,9 +38,8 @@ for show in shows_all:
     db.session.commit()
 """
 
-#GET METHODS
+#GET/SET METHODS
 def get_current_user():
-    # UPDATE THIS ONCE AUTHENTICATION IS IMPLEMENTED
     return current_user
 
 def get_current_lists():
@@ -51,7 +50,6 @@ def get_current_lists():
         return []
 
 def set_current_user(user):
-    # UPDATE THIS ONCE AUTHENTICATION IS IMPLEMENTED
     global current_user
     current_user = user
 
@@ -150,17 +148,51 @@ def new_review():
 def specific_list(list_id):
     # pass all of users shows, movies, games and books AND lists
     spec_list = List.query.get(list_id)
-    items = BookListLink.query.filter(BookListLink.list_id == list_id).all()
-    for i, elem in enumerate(items):
-        items[i] = Book.query.get(elem.book_id)
-    return render_template("list.html", template_list = spec_list, template_items = items)
+    items = []
+    counter = 0
+    bookitems = BookListLink.query.filter(BookListLink.list_id == list_id).all()
+    showitems = ShowListLink.query.filter(ShowListLink.list_id == list_id).all()
+    movieitems = MovieListLink.query.filter(MovieListLink.list_id == list_id).all()
+    gameitems = GameListLink.query.filter(GameListLink.list_id == list_id).all()
+    for i, elem in enumerate(bookitems):
+        bookitems[i] = Book.query.get(elem.book_id)
+    for i, elem in enumerate(showitems):
+        showitems[i] = Show.query.get(elem.show_id)
+    for i, elem in enumerate(movieitems):
+        movieitems[i] = Movie.query.get(elem.movie_id)
+    for i, elem in enumerate(gameitems):
+        gameitems[i] = Game.query.get(elem.game_id)
+    return render_template("list.html", template_list = spec_list, template_books = bookitems, template_shows = showitems, template_movies = movieitems, template_games=gameitems)
 
 @app.route('/addbooktolist/<int:new_list_id>/<int:new_book_id>')
-def add_to_list(new_list_id, new_book_id):
-    db.session.add(BookListLink(list_id=new_list_id, book_id=new_book_id))
-    db.session.commit()
+def add_book_to_list(new_list_id, new_book_id):
+    check = BookListLink.query().filter_by(list_id=new_list_id).filter_by(book_id=new_book_id)
+    if check == None:
+        db.session.add(BookListLink(list_id=new_list_id, book_id=new_book_id))
+        db.session.commit()
     spec_book = Book.query.get(new_book_id)
     return render_template("book/book.html", template_book=spec_book, template_lists = get_current_lists())
+
+@app.route('/addgametolist/<int:new_list_id>/<int:new_game_id>')
+def add_game_to_list(new_list_id, new_game_id):
+    db.session.add(GameListLink(list_id=new_list_id, game_id=new_game_id))
+    db.session.commit()
+    spec_game = Game.query.get(new_game_id)
+    return render_template("game/game.html", template_game=spec_game, template_lists = get_current_lists())
+
+@app.route('/addmovietolist/<int:new_list_id>/<int:new_movie_id>')
+def add_movie_to_list(new_list_id, new_movie_id):
+    db.session.add(MovieListLink(list_id=new_list_id, movie_id=new_movie_id))
+    db.session.commit()
+    spec_movie = Movie.query.get(new_movie_id)
+    return render_template("movie/movie.html", template_movie=spec_movie, template_lists = get_current_lists())
+
+@app.route('/addshowtolist/<int:new_list_id>/<int:new_show_id>')
+def add_show_to_list(new_list_id, new_show_id):
+    db.session.add(ShowListLink(list_id=new_list_id, show_id=new_show_id))
+    db.session.commit()
+    spec_show = Show.query.get(new_show_id)
+    return render_template("tv/tv.html", template_show=spec_show, template_lists = get_current_lists())
 
 @app.route('/login')
 def login():

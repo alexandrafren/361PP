@@ -6,4 +6,10 @@
             <p>Release Year: {{template_game.release}}</p>
             <p>Description: {{template_game.description}} </p>
         </div>
+        <br />
+        <div>
+            {% for list in template_lists %}
+                <div>{{ list.title }}  <a href="/addgametolist/{{list.id}}/{{template_game.id}}">Add to List</a></div>
+            {% endfor %}
+        </div>
     {% endblock %}
