@@ -2,7 +2,9 @@
 l1 = List(title="March 2022", reviewer_id=1)
 l2 = List(title="My Favorite Games", reviewer_id=1)
 l3 = List(title="Watch With George", reviewer_id=1)
+
 r1 = Reviewer(username="alixp")
+
 db.session.add(r1)
 db.session.add(l1)
 db.session.add(l2)
