@@ -1,5 +1,4 @@
-from __init__ import db
-
+from shareddb import db
 # User Model
 class Reviewer(db.Model):
     id = db.Column(db.Integer, primary_key = True)

@@ -1,7 +1,7 @@
 {% extends "navbar.html" %}
 {% block content %}
 <div class="columns">
-    <div class="column">
+    <div class="column" style="text-align: left; list-style-type: none;">
         <h3 class="title"><a href="/shows">TV</a></h3>
         {% for show in template_shows %}
         <li><a href=/shows/{{show.id}}>{{show.title}}</a></li>
@@ -9,7 +9,7 @@
         <br />
         <a href="/shows">See More ...</a>
     </div>
-    <div class="column">
+    <div class="column" style="text-align: left; list-style-type: none;">
         <h3 class="title"><a href="/movies">Movies</a></h3>
         {% for movie in template_movies %}
         <li><a href=/movies/{{movie.id}}>{{movie.title}}</a></li>
@@ -17,7 +17,7 @@
         <br />
         <a href="/movies">See More ...</a>
     </div>
-    <div class="column">
+    <div class="column" style="text-align: left; list-style-type: none;">
         <h3 class="title"><a href="/books">Books</a></h3>
         {% for book in template_books %}
         <li><a href=/books/{{book.id}}>{{book.title}}</a></li>
@@ -25,7 +25,7 @@
         <br />
         <a href="/books">See More ...</a>
     </div>
-    <div class="column">
+    <div class="column"style="text-align: left; list-style-type: none;">
         <h3 class="title"><a href="/games">Games</a></h3>
         {% for game in template_games %}
         <li><a href=/games/{{game.id}}>{{game.title}}</a></li>

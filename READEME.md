@@ -12,3 +12,13 @@ Shows: https://en.wikipedia.org/wiki/Category:Zombies_in_television
 
 Icon:
 Apple Zombie Emoji: https://emojipedia.org/apple/ios-11.1/zombie/ 
+
+
+
+To seed DB:
+from app import app, db
+from models import Book, Movie, Show, Game, Reviewer, BookListLink, MovieListLink, ShowListLink, GameListLink, BookReview, MovieReview, ShowReview, GameReview, List
+app.app_context().push()
+db.create_all()
+copy/paste seed data from create_objects()
+db.session.commit()

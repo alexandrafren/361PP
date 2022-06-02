@@ -1,6 +1,5 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for, flash
-from __init__ import db, create_app
 from helpers.movies import movies, descriptions
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
@@ -9,9 +8,20 @@ from flask_login import UserMixin
 import requests as requests
 import json
 import string
-from models import Book, Movie, Show, Game, Reviewer, BookListLink, BookReview, List
+from shareddb import db
+from models import Book, Movie, Show, Game, Reviewer, BookListLink, MovieListLink, ShowListLink, GameListLink, BookReview, MovieReview, ShowReview, GameReview, List
 
-main = create_app()
+app = Flask(__name__)
+    
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config['SECRET_KEY'] = 'SECRET_KEY'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'database.db')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db.init_app(app)
+with app.app_context():
+    db.create_all()
+
 global current_user
 current_user = None
 
@@ -38,7 +48,7 @@ def get_current_lists():
     if current_user is not None:
         return List.query.filter(List.reviewer_id == current_user.id).all()
     else:
-        return None
+        return []
 
 def set_current_user(user):
     # UPDATE THIS ONCE AUTHENTICATION IS IMPLEMENTED
@@ -51,7 +61,7 @@ def logged_in():
     else:
         return True
 
-@main.route('/')
+@app.route('/')
 def home():
     books = Book.query.limit(10).all()
     shows = Show.query.limit(10).all()
@@ -59,42 +69,42 @@ def home():
     games = Game.query.limit(10).all()
     return render_template("index.html", template_books=books, template_shows = shows, template_movies = movies, template_games = games)
 
-@main.route('/tv')
+@app.route('/tv')
 def tv():
     shows_all = Show.query.all()
     return render_template("tv/tvs.html", template_shows=shows_all)
 
-@main.route('/tv/<int:tv_id>')
+@app.route('/tv/<int:tv_id>')
 def specific_tv(tv_id):
     spec_show = Show.query.get(tv_id)
     return render_template("tv/tv.html", template_show=spec_show, template_lists = get_current_lists())
 
-@main.route('/movies')
+@app.route('/movies')
 def movies():
     movies_all = Movie.query.all()
     return render_template("movie/movies.html", template_movies=movies_all)
 
-@main.route('/movies/<int:movie_id>')
+@app.route('/movies/<int:movie_id>')
 def specific_movie(movie_id):
     spec_movie = Movie.query.get(movie_id)
     return render_template("movie/movie.html", template_movie=spec_movie, template_lists = get_current_lists())
 
-@main.route('/games')
+@app.route('/games')
 def games():
     games_all = Game.query.all()
     return render_template("game/games.html", template_games=games_all)
 
-@main.route('/games/<int:game_id>')
+@app.route('/games/<int:game_id>')
 def specific_game(game_id):
     spec_game = Game.query.get(game_id)
     return render_template("game/game.html", template_game=spec_game, template_lists = get_current_lists())
 
-@main.route('/books')
+@app.route('/books')
 def books():
     books_all = Book.query.all()
     return render_template("book/books.html", template_books=books_all)
 
-@main.route('/books/<int:book_id>')
+@app.route('/books/<int:book_id>')
 def specific_book(book_id):
     spec_book = Book.query.get(book_id)
     revs = BookReview.query.filter(BookReview.book_id == book_id)
@@ -102,7 +112,7 @@ def specific_book(book_id):
         revs[i].user = Reviewer.query.get(elem.reviewer_id).username
     return render_template("book/book.html", template_book=spec_book, template_lists = get_current_lists(), template_reviews = revs)
 
-@main.route('/profile')
+@app.route('/profile')
 def profile():
     # pass all of users shows, movies, games and books AND lists
     current_user = get_current_user()
@@ -113,7 +123,7 @@ def profile():
         rec_reviews[i].book = Book.query.get(elem.book_id)
     return render_template("profile.html", template_lists = get_current_lists(), cur_user=current_user, template_reviews=rec_reviews)
 
-@main.route('/newlist', methods=['POST'])
+@app.route('/newlist', methods=['POST'])
 def new_list():
     title = request.form.get('listname')
     if logged_in() and title != None:
@@ -123,7 +133,7 @@ def new_list():
     db.session.commit()
     return redirect(url_for('profile'))
 
-@main.route('/newreview', methods=['POST'])
+@app.route('/newreview', methods=['POST'])
 def new_review():
     text = request.form.get('review')
     book_id = request.form.get('book_id')
@@ -136,7 +146,7 @@ def new_review():
     revs = BookReview.query.filter(BookReview.book_id == book_id)
     return render_template("book/book.html", template_book=spec_book, template_lists = get_current_lists(), template_reviews = revs)
 
-@main.route('/lists/<int:list_id>')
+@app.route('/lists/<int:list_id>')
 def specific_list(list_id):
     # pass all of users shows, movies, games and books AND lists
     spec_list = List.query.get(list_id)
@@ -145,18 +155,18 @@ def specific_list(list_id):
         items[i] = Book.query.get(elem.book_id)
     return render_template("list.html", template_list = spec_list, template_items = items)
 
-@main.route('/addbooktolist/<int:new_list_id>/<int:new_book_id>')
+@app.route('/addbooktolist/<int:new_list_id>/<int:new_book_id>')
 def add_to_list(new_list_id, new_book_id):
     db.session.add(BookListLink(list_id=new_list_id, book_id=new_book_id))
     db.session.commit()
     spec_book = Book.query.get(new_book_id)
     return render_template("book/book.html", template_book=spec_book, template_lists = get_current_lists())
 
-@main.route('/login')
+@app.route('/login')
 def login():
     return render_template('login.html')
 
-@main.route('/login', methods=['POST'])
+@app.route('/login', methods=['POST'])
 def login_post():
     username = request.form.get('username')
     password = request.form.get('password')
@@ -167,11 +177,11 @@ def login_post():
     set_current_user(reviewer)
     return redirect(url_for('profile'))
 
-@main.route('/signup')
+@app.route('/signup')
 def signup():
     return render_template('signup.html')
 
-@main.route('/signup', methods=['POST'])
+@app.route('/signup', methods=['POST'])
 def signup_post():
     # validate and add user to the database
     username = request.form.get('username')
@@ -185,9 +195,9 @@ def signup_post():
     db.session.commit()
     return redirect(url_for('login'))
 
-@main.route('/logout')
+@app.route('/logout')
 def logout():
     return 'Logout'
 
-main.run(host='0.0.0.0', port=5001)
+app.run(host='0.0.0.0', port=5001)
 
