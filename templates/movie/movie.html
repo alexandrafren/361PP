@@ -15,10 +15,10 @@
                 <div>{{rev.text}}</div>
             {% endfor %}
             <div>Add A Review:
-                <form method="POST" action="/newreview">
+                <form method="POST" action="/newmoviereview">
                     <input class="input" type="text" name="review" placeholder="Add your review ... ">
                     <!-- Pass the Media ID through the Form -->
-                    <input class="input" type="hidden" name="book_id" value={{template_movie.id}}>
+                    <input class="input" type="hidden" name="movie_id" value={{template_movie.id}}>
                     <button class="button">Add</button>
                 </form>
             </div>

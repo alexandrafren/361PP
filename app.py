@@ -131,8 +131,8 @@ def new_list():
     db.session.commit()
     return redirect(url_for('profile'))
 
-@app.route('/newreview', methods=['POST'])
-def new_review():
+@app.route('/newbookreview', methods=['POST'])
+def new_book_review():
     text = request.form.get('review')
     book_id = request.form.get('book_id')
     if logged_in() and text != None:
@@ -143,6 +143,45 @@ def new_review():
     spec_book = Book.query.get(book_id)
     revs = BookReview.query.filter(BookReview.book_id == book_id)
     return render_template("book/book.html", template_book=spec_book, template_lists = get_current_lists(), template_reviews = revs)
+
+@app.route('/newgamereview', methods=['POST'])
+def new_game_review():
+    text = request.form.get('review')
+    game_id = request.form.get('game_id')
+    if logged_in() and text != None:
+        reviewer = get_current_user()
+    newreview = GameReview(text=text, game_id=game_id, reviewer_id = reviewer.id )
+    db.session.add(newreview)
+    db.session.commit()
+    spec_game = Game.query.get(game_id)
+    revs = GameReview.query.filter(GameReview.game_id == game_id)
+    return render_template("game/game.html", template_game=spec_game, template_lists = get_current_lists(), template_reviews = revs)
+
+@app.route('/newmoviereview', methods=['POST'])
+def new_movie_review():
+    text = request.form.get('review')
+    movie_id = request.form.get('movie_id')
+    if logged_in() and text != None:
+        reviewer = get_current_user()
+    newreview = MovieReview(text=text, movie_id=movie_id, reviewer_id = reviewer.id )
+    db.session.add(newreview)
+    db.session.commit()
+    spec_movie = Movie.query.get(movie_id)
+    revs = MovieReview.query.filter(MovieReview.movie_id == movie_id)
+    return render_template("movie/movie.html", template_movie=spec_movie, template_lists = get_current_lists(), template_reviews = revs)
+
+@app.route('/newshowreview', methods=['POST'])
+def new_show_review():
+    text = request.form.get('review')
+    show_id = request.form.get('show_id')
+    if logged_in() and text != None:
+        reviewer = get_current_user()
+    newreview = ShowReview(text=text, show_id=show_id, reviewer_id = reviewer.id )
+    db.session.add(newreview)
+    db.session.commit()
+    spec_show = Show.query.get(show_id)
+    revs = ShowReview.query.filter(ShowReview.show_id == show_id)
+    return render_template("tv/tv.html", template_show=spec_show, template_lists = get_current_lists(), template_reviews = revs)
 
 @app.route('/lists/<int:list_id>')
 def specific_list(list_id):
