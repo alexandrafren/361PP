@@ -125,10 +125,19 @@ def profile():
     current_user = get_current_user()
     if current_user is None:
         return redirect(url_for('login'))
-    rec_reviews = BookReview.query.filter(BookReview.reviewer_id == current_user.id).all()
-    for i, elem in enumerate(rec_reviews):
-        rec_reviews[i].book = Book.query.get(elem.book_id)
-    return render_template("profile.html", template_lists = get_current_lists(), cur_user=current_user, template_reviews=rec_reviews)
+    book_reviews = BookReview.query.filter(BookReview.reviewer_id == current_user.id).all()
+    for i, elem in enumerate(book_reviews):
+        book_reviews[i].book = Book.query.get(elem.book_id)
+    movie_reviews = MovieReview.query.filter(MovieReview.reviewer_id == current_user.id).all()
+    for i, elem in enumerate(movie_reviews):
+        movie_reviews[i].movie = Movie.query.get(elem.movie_id)
+    game_reviews = GameReview.query.filter(GameReview.reviewer_id == current_user.id).all()
+    for i, elem in enumerate(game_reviews):
+        game_reviews[i].game = Game.query.get(elem.game_id)
+    show_reviews = ShowReview.query.filter(ShowReview.reviewer_id == current_user.id).all()
+    for i, elem in enumerate(show_reviews):
+        show_reviews[i].show = Show.query.get(elem.show_id)
+    return render_template("profile.html", template_lists = get_current_lists(), cur_user=current_user, template_book_reviews=book_reviews, template_movie_reviews=movie_reviews, template_game_reviews=game_reviews, template_show_reviews=show_reviews)
 
 @app.route('/newlist', methods=['POST'])
 def new_list():
