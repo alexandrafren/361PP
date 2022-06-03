@@ -45,13 +45,13 @@
     <br />
 {% endfor %}
 {% for review in template_movie_reviews %} 
-    <a href="books/{{review.movie.id}}"> {{ review.movie.title }} </a>
+    <a href="movies/{{review.movie.id}}"> {{ review.movie.title }} </a>
     <br />
     {{ review.text }}
     <br />
 {% endfor %}
 {% for review in template_show_reviews %} 
-    <a href="books/{{review.show.id}}"> {{ review.show.title }} </a>
+    <a href="shows/{{review.show.id}}"> {{ review.show.title }} </a>
     <br />
     {{ review.text }}
     <br />
