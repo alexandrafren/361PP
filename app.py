@@ -78,7 +78,7 @@ def specific_tv(tv_id):
     revs = ShowReview.query.filter(ShowReview.show_id == tv_id)
     for i, elem in enumerate(revs):
         revs[i].user = Reviewer.query.get(elem.reviewer_id).username
-    return render_template("tv/tv.html", template_show=spec_show, template_lists = get_current_lists())
+    return render_template("tv/tv.html", template_show=spec_show, template_lists = get_current_lists(), template_reviews = revs)
 
 @app.route('/movies')
 def movies():
@@ -91,7 +91,7 @@ def specific_movie(movie_id):
     revs = MovieReview.query.filter(MovieReview.movie_id == movie_id)
     for i, elem in enumerate(revs):
         revs[i].user = Reviewer.query.get(elem.reviewer_id).username
-    return render_template("movie/movie.html", template_movie=spec_movie, template_lists = get_current_lists())
+    return render_template("movie/movie.html", template_movie=spec_movie, template_lists = get_current_lists(), template_reviews = revs)
 
 @app.route('/games')
 def games():
@@ -128,7 +128,6 @@ def profile():
     rec_reviews = BookReview.query.filter(BookReview.reviewer_id == current_user.id).all()
     for i, elem in enumerate(rec_reviews):
         rec_reviews[i].book = Book.query.get(elem.book_id)
-    
     return render_template("profile.html", template_lists = get_current_lists(), cur_user=current_user, template_reviews=rec_reviews)
 
 @app.route('/newlist', methods=['POST'])

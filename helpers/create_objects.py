@@ -154,7 +154,13 @@ db.session.add(m34)
 m35= Movie(title='The Beyond', release=1981, description='Second film in The Gates of Hell trilogy')																			
 db.session.add(m35)																			
 m36= Movie(title='Beyond Re-Animator', release=2003, description='')																			
+<<<<<<< HEAD
 db.session.add(m36)																																					
+=======
+db.session.add(m36)																			
+m37= Movie(title='Big Tits Zombie (Big Tits Dragon: Hot Spring Zombie vs. Stripper 5)', release=2010, description='')																			
+db.session.add(m37)																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 m38= Movie(title='Bio Zombie (Sun faa sau si)', release=1998, description='')																			
 db.session.add(m38)																			
 m39= Movie(title='Biohazardous', release=2001, description='')																			
@@ -297,7 +303,11 @@ m107= Movie(title='Day of the Dead 2: Contagium', release=2005, description='Uno
 db.session.add(m107)																			
 m108= Movie(title='Day of the Dead: Bloodline', release=2018, description='Remake')																			
 db.session.add(m108)																			
+<<<<<<< HEAD
 m109= Movie(title="Daylight's End", release=2016, description='')																			
+=======
+m109= Movie(title='Daylight's End', release=2016, description='')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m109)																			
 m110= Movie(title='Days of Darkness', release=2007, description='')																			
 db.session.add(m110)																			
@@ -321,9 +331,15 @@ m119= Movie(title='Dead and Deader', release=2006, description='')
 db.session.add(m119)																			
 m120= Movie(title='Dead Before Dawn', release=2012, description='Half-zombie, half-demon creature')																			
 db.session.add(m120)																			
+<<<<<<< HEAD
 m121= Movie(title="The Dead Don't Die", release=1975, description='Voodoo zombies')																			
 db.session.add(m121)																			
 m122= Movie(title="The Dead Don't Die (2019)", release=2019, description='')																			
+=======
+m121= Movie(title='The Dead Don't Die', release=1975, description='Voodoo zombies')																			
+db.session.add(m121)																			
+m122= Movie(title='The Dead Don't Die', release=2019, description='')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m122)																			
 m123= Movie(title='Dead Earth (Paradise Z)', release=2020, description='')																			
 db.session.add(m123)																			
@@ -359,7 +375,11 @@ m138= Movie(title='Dead Shack', release=2017, description='')
 db.session.add(m138)																			
 m139= Movie(title='Dead Snow', release=2009, description='Nazi zombies')																			
 db.session.add(m139)																			
+<<<<<<< HEAD
 m140= Movie(title="J'accuse", release=1919, description='World War I zombies')																			
+=======
+m140= Movie(title='J'accuse', release=1919, description='World War I zombies')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m140)																			
 m141= Movie(title='Dead Snow 2: Red vs. Dead', release=2014, description='')																			
 db.session.add(m141)																			
@@ -393,9 +413,15 @@ m155= Movie(title='Detention of the Dead', release=2012, description='')
 db.session.add(m155)																			
 m156= Movie(title='Devil Fetus 2: The Rape After', release=1984, description='')																			
 db.session.add(m156)																			
+<<<<<<< HEAD
 m157= Movie(title="The Devil's Daughter (Pocomania)", release=1939, description='Semi-remake of Ouanga')																			
 db.session.add(m157)																			
 m158= Movie(title="Devil's Playground", release=2010, description='')																			
+=======
+m157= Movie(title='The Devil's Daughter (Pocomania)', release=1939, description='Semi-remake of Ouanga')																			
+db.session.add(m157)																			
+m158= Movie(title='Devil's Playground', release=2010, description='')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m158)																			
 m159= Movie(title='Diary of the Dead', release=2007, description='Fourth sequel to Night of the Living Dead')																			
 db.session.add(m159)																			
@@ -413,6 +439,7 @@ m165= Movie(title='Do Gaz Zameen Ke Neeche (Two Yards Under the Ground)', releas
 db.session.add(m165)																			
 m166= Movie(title='Doc of the Dead', release=2014, description='')																			
 db.session.add(m166)																			
+<<<<<<< HEAD
 m167= Movie(title="Doctor Blood's Coffin", release=1961, description='First color zombie film')																			
 db.session.add(m167)																			
 m168= Movie(title='Doghouse', release=2009, description='')																			
@@ -420,6 +447,15 @@ db.session.add(m168)
 m169= Movie(title="Don't Go in the House", release=1979, description='')																			
 db.session.add(m169)																			
 m170= Movie(title="Don't Grow Up", release=2015, description='')																			
+=======
+m167= Movie(title='Doctor Blood's Coffin', release=1961, description='First color zombie film')																			
+db.session.add(m167)																			
+m168= Movie(title='Doghouse', release=2009, description='')																			
+db.session.add(m168)																			
+m169= Movie(title='Don't Go in the House', release=1979, description='')																			
+db.session.add(m169)																			
+m170= Movie(title='Don't Grow Up', release=2015, description='')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m170)																			
 m171= Movie(title='Doom', release=2005, description='Based loosely on the 1994 video game')																			
 db.session.add(m171)																			
@@ -442,9 +478,19 @@ db.session.add(m179)
 m180= Movie(title='In un giorno la fine (The End?)', release=2017, description='')																			
 db.session.add(m180)																			
 m181= Movie(title='Endzeit (Ever After)', release=2018, description='')																			
+<<<<<<< HEAD
 db.session.add(m181)																																						
 m183= Movie(title='Evil (To Κακό)', release=2005, description='')																			
 db.session.add(m183)																																						
+=======
+db.session.add(m181)																			
+m182= Movie(title='Erotic Nights of the Living Dead (Sexy Nights of the Living Dead)', release=1980, description='')																			
+db.session.add(m182)																			
+m183= Movie(title='Evil (To Κακό)', release=2005, description='')																			
+db.session.add(m183)																			
+m184= Movie(title='Evil Head', release=2012, description='Adult parody of The Evil Dead')																			
+db.session.add(m184)																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 m185= Movie(title='Evil: In the Time of Heroes (To Κακό 2: Στην Eποχή Tων Hρώων)', release=2009, description='Sequel to To Κακό')																			
 db.session.add(m185)																			
 m186= Movie(title='Exhumed', release=2003, description='Anthology film')																			
@@ -477,7 +523,11 @@ m199= Movie(title='Frankenhooker', release=1990, description='')
 db.session.add(m199)																			
 m200= Movie(title='Frankenstein Island', release=1981, description='')																			
 db.session.add(m200)																			
+<<<<<<< HEAD
 m201= Movie(title="Frankenstein's Army", release=2013, description='')																			
+=======
+m201= Movie(title='Frankenstein's Army', release=2013, description='')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m201)																			
 m202= Movie(title='Freaks of Nature', release=2015, description='')																			
 db.session.add(m202)																			
@@ -501,7 +551,11 @@ m211= Movie(title='The Ghost Breakers', release=1940, description='')
 db.session.add(m211)																			
 m212= Movie(title='Ghost Brigade (The Lost Brigade, Grey Knight)', release=1993, description='')																			
 db.session.add(m212)																			
+<<<<<<< HEAD
 m213= Movie(title='The Ghost Galleon', release=1974, description="Third film in de Ossorio's Blind Dead series")																			
+=======
+m213= Movie(title='The Ghost Galleon', release=1974, description='Third film in de Ossorio's Blind Dead series')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m213)																			
 m214= Movie(title='The Ghouls (Cannibal Dead: The Ghouls, Urban Cannibals)', release=2003, description='')																			
 db.session.add(m214)																			
@@ -631,7 +685,11 @@ m277= Movie(title='Las momias de Guanajuato (The Mummies of Guanajuato)', releas
 db.session.add(m277)																			
 m278= Movie(title='The Last Days on Mars', release=2013, description='')																			
 db.session.add(m278)																			
+<<<<<<< HEAD
 m279= Movie(title="The Last Man on Earth (L'ultimo uomo della Terra)", release=1964, description='Infected humans. First adaptation of the novel, I Am Legend')																			
+=======
+m279= Movie(title='The Last Man on Earth (L'ultimo uomo della Terra)', release=1964, description='Infected humans. First adaptation of the novel, I Am Legend')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m279)																			
 m280= Movie(title='Last of the Living', release=2009, description='')																			
 db.session.add(m280)																			
@@ -689,7 +747,11 @@ m306= Movie(title='Mutant', release=1984, description='')
 db.session.add(m306)																			
 m307= Movie(title='Mutants', release=2009, description='')																			
 db.session.add(m307)																			
+<<<<<<< HEAD
 m308= Movie(title="My Boyfriend's Back", release=1993, description='')																			
+=======
+m308= Movie(title='My Boyfriend's Back', release=1993, description='')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m308)																			
 m309= Movie(title='Die Nacht der lebenden Loser (Night of the Living Dorks)', release=2004, description='')																			
 db.session.add(m309)																			
@@ -729,7 +791,11 @@ m326= Movie(title='Night of the Living Dead: Resurrection', release=2012, descri
 db.session.add(m326)																			
 m327= Movie(title='Night of the Living Deb', release=2015, description='')																			
 db.session.add(m327)																			
+<<<<<<< HEAD
 m328= Movie(title='Night of the Seagulls', release=1975, description="Fourth film in de Ossorio's Blind Dead series")																			
+=======
+m328= Movie(title='Night of the Seagulls', release=1975, description='Fourth film in de Ossorio's Blind Dead series')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m328)																			
 m329= Movie(title='The Night Shift', release=2011, description='Based on a 2009 short film of the same title')																			
 db.session.add(m329)																			
@@ -771,7 +837,11 @@ m347= Movie(title='Overlord', release=2018, description='')
 db.session.add(m347)																			
 m348= Movie(title='Ozone', release=1995, description='Drug turns people into zombies')																			
 db.session.add(m348)																			
+<<<<<<< HEAD
 m349= Movie(title='ParaNorman', release=2012, description="Described as a 'zombie movie for kids'")																			
+=======
+m349= Movie(title='ParaNorman', release=2012, description='Described as a 'zombie movie for kids'')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m349)																			
 m350= Movie(title='Pathogen', release=2006, description='The documentary Zombie Girl: The Movie covers the making of this film')																			
 db.session.add(m350)																			
@@ -793,7 +863,11 @@ m358= Movie(title='Plaga Zombie', release=1997, description='First zombie movie 
 db.session.add(m358)																			
 m359= Movie(title='Plaga Zombie: Zona Mutante', release=2001, description='')																			
 db.session.add(m359)																			
+<<<<<<< HEAD
 m360= Movie(title="The Plague (Clive Barker's The Plague)", release=2006, description='')																			
+=======
+m360= Movie(title='The Plague (Clive Barker's The Plague)', release=2006, description='')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m360)																			
 m361= Movie(title='The Plague of the Zombies', release=1966, description='')																			
 db.session.add(m361)																			
@@ -815,13 +889,21 @@ m369= Movie(title='Premutos: The Fallen Angel (Premutos – Der gefallene Engel,
 db.session.add(m369)																			
 m370= Movie(title='Pride and Prejudice and Zombies', release=2016, description='')																			
 db.session.add(m370)																			
+<<<<<<< HEAD
 m371= Movie(title="Prince of Darkness (John Carpenter's Prince of Darkness)", release=1987, description='')																			
+=======
+m371= Movie(title='Prince of Darkness (John Carpenter's Prince of Darkness)', release=1987, description='')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m371)																			
 m372= Movie(title='Pro Wrestlers vs Zombies', release=2014, description='')																			
 db.session.add(m372)																			
 m373= Movie(title='Project Z', release=2021, description='')																			
 db.session.add(m373)																			
+<<<<<<< HEAD
 m374= Movie(title="Pushin' Up Daisies", release=2010, description='')																			
+=======
+m374= Movie(title='Pushin' Up Daisies', release=2010, description='')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m374)																			
 m375= Movie(title='Quarantine', release=2008, description='Remake of REC')																			
 db.session.add(m375)																			
@@ -883,7 +965,11 @@ m403= Movie(title='Resident Evil: Retribution', release=2012, description='')
 db.session.add(m403)																			
 m404= Movie(title='Resident Evil: Vendetta', release=2017, description='Animated')																			
 db.session.add(m404)																			
+<<<<<<< HEAD
 m405= Movie(title='Return of the Blind Dead', release=1973, description="Second film in de Ossorio's Blind Dead series")																			
+=======
+m405= Movie(title='Return of the Blind Dead', release=1973, description='Second film in de Ossorio's Blind Dead series')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m405)																			
 m406= Movie(title='The Return of the Living Dead', release=1985, description='')																			
 db.session.add(m406)																			
@@ -931,7 +1017,11 @@ m427= Movie(title='Satan's Slave', release=1980, description='')
 db.session.add(m427)																			
 m428= Movie(title='Scarecrows', release=1988, description='')																			
 db.session.add(m428)																			
+<<<<<<< HEAD
 m429= Movie(title='Scary or Die', release=2012, description="Anthology film; 'The Crossing' and 'Lover Come Back' segments")																			
+=======
+m429= Movie(title='Scary or Die', release=2012, description='Anthology film; 'The Crossing' and 'Lover Come Back' segments')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m429)																			
 m430= Movie(title='Scooby-Doo on Zombie Island', release=1998, description='')																			
 db.session.add(m430)																			
@@ -1013,7 +1103,11 @@ m468= Movie(title='They Walk', release=2010, description='')
 db.session.add(m468)																			
 m469= Movie(title='Tokyo Zombie', release=2005, description='')																			
 db.session.add(m469)																			
+<<<<<<< HEAD
 m470= Movie(title='Tombs of the Blind Dead', release=1972, description="First film in de Ossorio's Blind Dead series")																			
+=======
+m470= Movie(title='Tombs of the Blind Dead', release=1972, description='First film in de Ossorio's Blind Dead series')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m470)																			
 m471= Movie(title='Tormented', release=2009, description='')																			
 db.session.add(m471)																			
@@ -1033,7 +1127,11 @@ m478= Movie(title='Undead', release=2003, description='')
 db.session.add(m478)																			
 m479= Movie(title='Undead or Alive', release=2007, description='')																			
 db.session.add(m479)																			
+<<<<<<< HEAD
 m480= Movie(title="Undead Pool (Attack Girls' Swim Team versus the Undead)", release=2007, description='')																			
+=======
+m480= Movie(title='Undead Pool (Attack Girls' Swim Team versus the Undead)', release=2007, description='')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m480)																			
 m481= Movie(title='Uniform SurviGirl I (Seifuku Survivor Girl, Seifuku sabaigâru I)', release=2008, description='')																			
 db.session.add(m481)																			
@@ -1071,7 +1169,11 @@ m497= Movie(title='Voodoo Island', release=1957, description='')
 db.session.add(m497)																			
 m498= Movie(title='Voodoo Man', release=1944, description='')																			
 db.session.add(m498)																			
+<<<<<<< HEAD
 m499= Movie(title='The Walking Deceased', release=2015, description="Parody of Warm Bodies and AMC's The Walking Dead")																			
+=======
+m499= Movie(title='The Walking Deceased', release=2015, description='Parody of Warm Bodies and AMC's The Walking Dead')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m499)																			
 m500= Movie(title='War of the Dead (Stone's War)', release=2011, description='')																			
 db.session.add(m500)																			
@@ -1085,7 +1187,11 @@ m504= Movie(title='Waxwork', release=1988, description='')
 db.session.add(m504)																			
 m505= Movie(title='Waxwork II: Lost in Time', release=1992, description='')																			
 db.session.add(m505)																			
+<<<<<<< HEAD
 m506= Movie(title="We're Going to Eat You", release=1980, description='')																			
+=======
+m506= Movie(title='We're Going to Eat You', release=1980, description='')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m506)																			
 m507= Movie(title='Weekend at Bernie's II', release=1993, description='')																			
 db.session.add(m507)																			
@@ -1115,7 +1221,11 @@ m519= Movie(title='Zeder (Revenge of the Dead)', release=1983, description='')
 db.session.add(m519)																			
 m520= Movie(title='Zeta: When The Dead Awaken', release=2019, description='')																			
 db.session.add(m520)																			
+<<<<<<< HEAD
 m521= Movie(title="Zibahkhana (Hell's Ground)", release=2007, description="First zombie movie from Pakistan")																			
+=======
+m521= Movie(title='Zibahkhana (Hell's Ground)', release=2007, description='First zombie movie from Pakistan')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(m521)																			
 m522= Movie(title='ZMD: Zombies of Mass Destruction', release=2009, description='')																			
 db.session.add(m522)																			
@@ -1265,21 +1375,37 @@ g11= Game(title='Blood Drive', release=2010, platforms='PlayStation 3  Xbox 360'
 db.session.add(g11)																			
 g12= Game(title='Burn  Zombie Burn!', release=2009, platforms='PlayStation 3  Windows  macOS ', description='Zombies appear in waves and must be destroyed by being set alight.')																			
 db.session.add(g12)																			
+<<<<<<< HEAD
 g13= Game(title='Call of Duty: Black Ops (zombie mode)', release=2010, platforms='PlayStation 3  Xbox 360  Windows', description="First-person shooter survival mode of Call of Duty: Black Ops. A zombie cooperation mode  titled 'Zombies'  is included in the game. Originally featured in World at War  it was revamped to be included in Black Ops. It is a four-player online and two-player split screen co-op mode (which can also be unlocked online). Based on the original game  in the map 'Five'  players take the roles of John F. Kennedy  Richard Nixon  Robert McNamara  and Fidel Castro as they fight zombies at the Pentagon. Another map  called Kino der Toten ('Theater/Cinema of the Dead' in German)  features the characters from World at War – Edward Richtofen the German  Tank Dempsey the American  Takeo Masaki the Japanese  and Nikolai Belinski the Russian. Limited editions of the game offer graphically-enhanced versions of the four zombie maps from World at War  featuring the newer weapons from the rest of the game. There is an unlockable top-down  two-stick arcade-shooter version of Zombies known as Dead Ops Arcade.")																			
 db.session.add(g13)																			
 g14= Game(title='Call of Duty: Black Ops – Zombies', release=2011, platforms='iOS  Android', description='First-person shooter spin off from the Zombies minigame in Call of Duty: Black Ops  up to four players can co-operate using voice chat to survive the zombie onslaught.')																			
 db.session.add(g14)																			
 g15= Game(title='Call of Duty: Black Ops II (zombie mode)', release=2012, platforms='PlayStation 3  Xbox 360  Windows', description="First-person shooter survival game  part of the Call of Duty: Black Ops II. Treyarch has confirmed that the Zombies mode will return for Black Ops II with new game modes. Its predecessors were Call of Duty: World at War and Call of Duty: Black Ops. This is the third time for the Zombies mode to appear in a Call of Duty game  and the first time to have game modes other than the traditional Survival mode. Treyarch has also confirmed that Zombies will run on the game's multiplayer engine  allowing for a deeper community experience  along with new features. A new 8 player co-op game called Grief is also supported  featuring 2 teams of 4 players competing to survive  unlike Call of Duty: World at War and Call of Duty: Black Ops  which only supported 4 player online co-op. As with the previous game  each map contains 'Easter eggs' side quests  which is used to progress the story.")																			
+=======
+g13= Game(title='Call of Duty: Black Ops (zombie mode)', release=2010, platforms='PlayStation 3  Xbox 360  Windows', description='First-person shooter survival mode of Call of Duty: Black Ops. A zombie cooperation mode  titled 'Zombies'  is included in the game. Originally featured in World at War  it was revamped to be included in Black Ops. It is a four-player online and two-player split screen co-op mode (which can also be unlocked online). Based on the original game  in the map 'Five'  players take the roles of John F. Kennedy  Richard Nixon  Robert McNamara  and Fidel Castro as they fight zombies at the Pentagon. Another map  called Kino der Toten ('Theater/Cinema of the Dead' in German)  features the characters from World at War – Edward Richtofen the German  Tank Dempsey the American  Takeo Masaki the Japanese  and Nikolai Belinski the Russian. Limited editions of the game offer graphically-enhanced versions of the four zombie maps from World at War  featuring the newer weapons from the rest of the game. There is an unlockable top-down  two-stick arcade-shooter version of Zombies known as Dead Ops Arcade.')																			
+db.session.add(g13)																			
+g14= Game(title='Call of Duty: Black Ops – Zombies', release=2011, platforms='iOS  Android', description='First-person shooter spin off from the Zombies minigame in Call of Duty: Black Ops  up to four players can co-operate using voice chat to survive the zombie onslaught.')																			
+db.session.add(g14)																			
+g15= Game(title='Call of Duty: Black Ops II (zombie mode)', release=2012, platforms='PlayStation 3  Xbox 360  Windows', description='First-person shooter survival game  part of the Call of Duty: Black Ops II. Treyarch has confirmed that the Zombies mode will return for Black Ops II with new game modes. Its predecessors were Call of Duty: World at War and Call of Duty: Black Ops. This is the third time for the Zombies mode to appear in a Call of Duty game  and the first time to have game modes other than the traditional Survival mode. Treyarch has also confirmed that Zombies will run on the game's multiplayer engine  allowing for a deeper community experience  along with new features. A new 8 player co-op game called Grief is also supported  featuring 2 teams of 4 players competing to survive  unlike Call of Duty: World at War and Call of Duty: Black Ops  which only supported 4 player online co-op. As with the previous game  each map contains 'Easter eggs' side quests  which is used to progress the story.')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(g15)																			
 g16= Game(title='Call of Duty: Black Ops III (zombie mode)', release=2015, platforms='Microsoft Windows  PlayStation 4  Xbox One', description='First-person shooter survival horror video game  part of Call of Duty: Black Ops III. Treyarch confirmed  zombies will return in Call of Duty: Black Ops III  with an alternative expanded campaign. The classic survival horde mode from previous titles returns. The storyline from the previous games is also continued as the four characters; Tank Dempsey  Takeo Masaki  Nikolai Belinski and Doctor Edward Richtofen attempt to save the universe.')																			
 db.session.add(g16)																			
 g17= Game(title='Call of Duty: Black Ops 4 (zombie mode)', release=2018, platforms='Microsoft Windows  PlayStation 4  Xbox One', description='First-person shooter horror-themed video game mode  part of Call of Duty: Black Ops 4.')																			
 db.session.add(g17)																			
+<<<<<<< HEAD
 g18= Game(title='Call of Duty: Black Ops Cold War (zombie mode)', release=2020, platforms='PlayStation 4  PlayStation 5  Xbox One  Xbox Series X  Microsoft Windows', description="First-person shooter survival horror video game  part of Call of Duty: Black Ops Cold War. Unlike previous titles  Call of Duty: Black Ops Cold War's zombie mode does not have 4 main protagonists  instead playing as operators from the Multiplayer mode.")																			
 db.session.add(g18)																			
 g19= Game(title='Call of Duty: Infinite Warfare (zombie mode)', release=2016, platforms='PlayStation 4  Xbox One  Windows', description='Zombies is a game mode that is featured in Call of Duty: Infinite Warfare. The first map is called Zombies in Spaceland.')																			
 db.session.add(g19)																			
 g20= Game(title='Call of Duty: World at War (zombie mode)', release=2008, platforms='PlayStation 3  Xbox 360  Windows', description="First-person shooter survival mode of Call of Duty: World at War. All versions but the Wii feature the minigame Nazi Zombies  which consists of 1-4 players fighting an unlimited number of waves of Nazi zombies. Players can work together with other people to assassinate the zombies in a 'co-op' (cooperative) mode either offline with two players or online with 2-4 players. The players gain points by injuring or killing the zombies or repairing boarded-up windows  which are used to remove blockages inside the bunker and to gain access to more useful weapons than the starting M1911 pistol and unlock more rooms. Zombies continually break the windows to gain entrance and to find and beat the players; when all players are damaged enough to fall  the game is over. Three extra maps for the Nazi Zombies game mode were added with the World at War map packs. These maps  Shi No Numa  Verruckt and Der Riese added on to the Nacht Der Untoten map which came with the game.")																			
+=======
+g18= Game(title='Call of Duty: Black Ops Cold War (zombie mode)', release=2020, platforms='PlayStation 4  PlayStation 5  Xbox One  Xbox Series X  Microsoft Windows', description='First-person shooter survival horror video game  part of Call of Duty: Black Ops Cold War. Unlike previous titles  Call of Duty: Black Ops Cold War's zombie mode does not have 4 main protagonists  instead playing as operators from the Multiplayer mode.')																			
+db.session.add(g18)																			
+g19= Game(title='Call of Duty: Infinite Warfare (zombie mode)', release=2016, platforms='PlayStation 4  Xbox One  Windows', description='Zombies is a game mode that is featured in Call of Duty: Infinite Warfare. The first map is called Zombies in Spaceland.')																			
+db.session.add(g19)																			
+g20= Game(title='Call of Duty: World at War (zombie mode)', release=2008, platforms='PlayStation 3  Xbox 360  Windows', description='First-person shooter survival mode of Call of Duty: World at War. All versions but the Wii feature the minigame Nazi Zombies  which consists of 1-4 players fighting an unlimited number of waves of Nazi zombies. Players can work together with other people to assassinate the zombies in a 'co-op' (cooperative) mode either offline with two players or online with 2-4 players. The players gain points by injuring or killing the zombies or repairing boarded-up windows  which are used to remove blockages inside the bunker and to gain access to more useful weapons than the starting M1911 pistol and unlock more rooms. Zombies continually break the windows to gain entrance and to find and beat the players; when all players are damaged enough to fall  the game is over. Three extra maps for the Nazi Zombies game mode were added with the World at War map packs. These maps  Shi No Numa  Verruckt and Der Riese added on to the Nacht Der Untoten map which came with the game.')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(g20)																			
 g21= Game(title='Call of Duty: World at War – Zombies', release=2009, platforms='iOS', description='First-person shooter set during World War II where a military bunker must be defended from attacking Nazi zombie soldiers. Based on the zombie mode of Call of Duty: World at War.')																			
 db.session.add(g21)																			
@@ -1293,13 +1419,21 @@ g25= Game(title='Contagion', release=2014, platforms='Windows', description='Con
 db.session.add(g25)																			
 g26= Game(title='Corpse Craft: Incident at Weardd Academy', release=2008, platforms='Browser  Flash  iOS', description='A simplified real-time strategy game in which schoolchildren battle each other with zombies they reanimate.')																			
 db.session.add(g26)																			
+<<<<<<< HEAD
 g27= Game(title='Corpse Killer', release=1994, platforms='3DO  Sega CD  32X  Sega Saturn  Windows', description="A live-action light gun game featuring a soldier who must fight through an island full of zombies to reach 'necrobiologist' Dr. Hellman.")																			
+=======
+g27= Game(title='Corpse Killer', release=1994, platforms='3DO  Sega CD  32X  Sega Saturn  Windows', description='A live-action light gun game featuring a soldier who must fight through an island full of zombies to reach 'necrobiologist' Dr. Hellman.')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(g27)																			
 g28= Game(title='D2', release=2000, platforms='Dreamcast', description='Survival horror  the survivor of a plane crash in the wilds of Canada discovers that other passengers on the plane are being transformed into zombie-plant hybrids.')																			
 db.session.add(g28)																			
 g29= Game(title='Darkwatch', release=2005, platforms='PlayStation 2  Xbox', description='First-person shooter in a Wild West setting. A train robber turned vampire must defeat enemies such as zombies and skeletons while trying to reclaim his humanity.')																			
 db.session.add(g29)																			
+<<<<<<< HEAD
 g30= Game(title='Days Gone', release=2019, platforms='PlayStation 4  Windows', description="An open-world action-adventure game where you play as Deacon St. John  a Drifter and bounty hunter who would rather risk the dangers of the broken road than live in one of the 'safe' wilderness encampments. The game takes place two years after a global pandemic has killed almost everyone  but transformed millions of others into what survivors call Freakers.")																			
+=======
+g30= Game(title='Days Gone', release=2019, platforms='PlayStation 4  Windows', description='An open-world action-adventure game where you play as Deacon St. John  a Drifter and bounty hunter who would rather risk the dangers of the broken road than live in one of the 'safe' wilderness encampments. The game takes place two years after a global pandemic has killed almost everyone  but transformed millions of others into what survivors call Freakers.')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(g30)																			
 g31= Game(title='DayZ', release=2012, platforms='Windows', description='An ARMA 2 mod which features survival horror and shooter gameplay in an open world. The game is online multiplayer. Players must feed their character as well as deal with other players and the living dead. The mod now also has a stand-alone version for PC owners.')																			
 db.session.add(g31)																			
@@ -1309,6 +1443,7 @@ g33= Game(title='Dead Effect series', release=2013, platforms='iOS  Android  Mic
 db.session.add(g33)																			
 g34= Game(title='Dead Frontier', release=2008, platforms='Browser', description='Free browser-based top down massively multiplayer online role-playing game set in an open world. Dead Frontier takes place in a post-apocalypse setting teeming with zombies. Players must scavenge supplies in order to survive.')																			
 db.session.add(g34)																			
+<<<<<<< HEAD
 g35= Game(title='Dead Head Fred', release=2007, platforms='PlayStation Portable', description="Private investigator Fred is murdered  only to find himself reanimated and able to steal enemies' heads to perform different attacks.")																			
 db.session.add(g35)																			
 g36= Game(title='Dead Island series', release=2011–present, platforms='PlayStation 3  PlayStation 4  Windows  Xbox 360  Xbox One', description='Single-player or multiplayer open world games with role-playing elements and an emphasis on combat. Upcoming releases include a new game in the main series  a stealth-focused spinoff and a MOBA game.')																			
@@ -1318,6 +1453,17 @@ db.session.add(g37)
 g38= Game(title='Dead Rising series', release=2006–present, platforms='iOS  PlayStation 3  Wii  Windows  Xbox 360  Xbox One', description='Third-person action games which allow the player to destroy zombies with various ordinary items and weapons  from benches and lawnmowers to guns and swords.')																			
 db.session.add(g38)																			
 g39= Game(title='Dead Space series', release=2008–2013, platforms='PlayStation 3  Wii  Windows  Xbox 360', description="Science fiction survival horror games where Necromorphs  generated from corpses infected by an alien pathogen  are the primary enemy. They are most effectively killed by 'strategic dismemberment'  cutting off their limbs.")																			
+=======
+g35= Game(title='Dead Head Fred', release=2007, platforms='PlayStation Portable', description='Private investigator Fred is murdered  only to find himself reanimated and able to steal enemies' heads to perform different attacks.')																			
+db.session.add(g35)																			
+g36= Game(title='Dead Island series', release=2011–present, platforms='PlayStation 3  PlayStation 4  Windows  Xbox 360  Xbox One', description='Single-player or multiplayer open world games with role-playing elements and an emphasis on combat. Upcoming releases include a new game in the main series  a stealth-focused spinoff and a MOBA game.')																			
+db.session.add(g36)																			
+g37= Game(title='Dead Nation', release=2010, platforms='PlayStation 3', description='PlayStation Network twin-stick shooter. The game detects players' geographic locations and groups them accordingly within the game world  displaying players' progress in that region.')																			
+db.session.add(g37)																			
+g38= Game(title='Dead Rising series', release=2006–present, platforms='iOS  PlayStation 3  Wii  Windows  Xbox 360  Xbox One', description='Third-person action games which allow the player to destroy zombies with various ordinary items and weapons  from benches and lawnmowers to guns and swords.')																			
+db.session.add(g38)																			
+g39= Game(title='Dead Space series', release=2008–2013, platforms='PlayStation 3  Wii  Windows  Xbox 360', description='Science fiction survival horror games where Necromorphs  generated from corpses infected by an alien pathogen  are the primary enemy. They are most effectively killed by 'strategic dismemberment'  cutting off their limbs.')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(g39)																			
 g40= Game(title='Dead State', release=2014, platforms='Windows', description='Role-playing game with turn-based combat set in the fictional town of Splendid  Texas. Players must defend their shelter while foraging for supplies and recruiting survivors.')																			
 db.session.add(g40)																			
@@ -1335,24 +1481,39 @@ g46= Game(title='Entombed', release=1982, platforms='Atari 2600', description='F
 db.session.add(g46)																			
 g47= Game(title='The Evil Dead', release=1984, platforms='Commodore 64  ZX Spectrum', description='Downloadable survival horror game. A scientist must escort an eight-year-old girl through a city devastated by an airborne virus that turns those infected into zombies. The scientist is infected and must manage her condition.')																			
 db.session.add(g47)																			
+<<<<<<< HEAD
 g48= Game(title='Evil Dead series', release=2000–2005, platforms='Dreamcast  PlayStation  PlayStation 2  Windows  Xbox', description="Action game trilogy consisting of Hail to the King  A Fistful of Boomstick and Regeneration. Ash Williams fights against Deadites  'zombified demons'")																			
 db.session.add(g48)																			
 g49= Game(title='The Evil Within series', release=2014–2017, platforms='PlayStation 3  PlayStation 4  Windows  Xbox 360  Xbox One', description='A gory survival horror game played from a third person viewpoint. Contains both stealth and action sequences. Zombies must be dispatched and burned to prevent them returning to life.')																			
 db.session.add(g49)																			
 g50= Game(title='Five Nights at Freddy's 3', release=2015, platforms="Windows  iOS  Android  PlayStation 4  Xbox One  Nintendo Switch", description="Point-and-click survival horror game. Main antagonist of the game is Springtrap  the reanimated corpse of the series' overarching villain William Afton. Afton was killed by mechanical failures of an animatronic rabbit costume he had used in committing the murders of several children in the '80s. Springtrap/Afton reappears in subsequent games progressively desiccated and damaged as Scraptrap (Freddy Fazbear's Pizzeria Simulator) and Burntrap (Five Nights at Freddy's: Security Breach).")																			
+=======
+g48= Game(title='Evil Dead series', release=2000–2005, platforms='Dreamcast  PlayStation  PlayStation 2  Windows  Xbox', description='Action game trilogy consisting of Hail to the King  A Fistful of Boomstick and Regeneration. Ash Williams fights against Deadites  'zombified demons'')																			
+db.session.add(g48)																			
+g49= Game(title='The Evil Within series', release=2014–2017, platforms='PlayStation 3  PlayStation 4  Windows  Xbox 360  Xbox One', description='A gory survival horror game played from a third person viewpoint. Contains both stealth and action sequences. Zombies must be dispatched and burned to prevent them returning to life.')																			
+db.session.add(g49)																			
+g50= Game(title='Five Nights at Freddy's 3', release=2015, platforms='Windows  iOS  Android  PlayStation 4  Xbox One  Nintendo Switch', description='Point-and-click survival horror game. Main antagonist of the game is Springtrap  the reanimated corpse of the series' overarching villain William Afton. Afton was killed by mechanical failures of an animatronic rabbit costume he had used in committing the murders of several children in the '80s. Springtrap/Afton reappears in subsequent games progressively desiccated and damaged as Scraptrap (Freddy Fazbear's Pizzeria Simulator) and Burntrap (Five Nights at Freddy's: Security Breach).')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(g50)																			
 g51= Game(title='Flesh Feast', release=1998, platforms='Windows', description='3D game in which the player must guide either a team of four characters or a single character through 17 stages of play  rescuing survivors and fighting zombies.')																			
 db.session.add(g51)																			
 g52= Game(title='Fort Zombie', release=2009, platforms='Windows', description='Players must barricade themselves within a building and survive a zombie onslaught.')																			
 db.session.add(g52)																			
+<<<<<<< HEAD
 g53= Game(title='Ghosts and Goblins', release=1985, platforms='Amiga  Arcade  Commodore 64  Commodore 16  NES', description="is a side-scrolling platforming game developed by Capcom for video arcades and has since been released on several other platforms. It is the first game in the Ghosts 'n Goblins franchise.")																			
 db.session.add(g53)																			
 g54= Game(title='Ghoul Patrol', release=1994, platforms='Super NES', description="Sequel to Zombies Ate My Neighbors. The local library's goblin exhibit has come to life  the ghoul patrol must fight historical figures who have become zombies as well as other monsters.")																			
+=======
+g53= Game(title='Ghosts and Goblins', release=1985, platforms='Amiga  Arcade  Commodore 64  Commodore 16  NES', description='is a side-scrolling platforming game developed by Capcom for video arcades and has since been released on several other platforms. It is the first game in the Ghosts 'n Goblins franchise.')																			
+db.session.add(g53)																			
+g54= Game(title='Ghoul Patrol', release=1994, platforms='Super NES', description='Sequel to Zombies Ate My Neighbors. The local library's goblin exhibit has come to life  the ghoul patrol must fight historical figures who have become zombies as well as other monsters.')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(g54)																			
 g55= Game(title='Gloom 3', release=1997, platforms='Amiga', description='First-person shooter  the player dispenses with zombies which explode in a shower of limbs.')																			
 db.session.add(g55)																			
 g56= Game(title='H1Z1: Just Survive', release=2015, platforms='Windows', description='MMO open world survival game set in a post-apocalyptic rural United States infected by the H1Z1 outbreak; an effective and intense mutation of the H1Z1 virus. The player must survive with emphasis on mainly crafting  cooperation  and scavenging resources against the swarming zombie population  vicious animals such as wolves and bears  and potentially hostile survivors.')																			
 db.session.add(g56)																			
+<<<<<<< HEAD
 g57= Game(title='Half-Life series', release=1998–2020, platforms='Windows  macOS  Several consoles', description='The player confronts several alien lifeforms that invaded Earth due to a teleport accident. The most prominent foes are humans zombified by some aliens called 'headcrabs'.")																			
 db.session.add(g57)																			
 g58= Game(title='Horror Zombies from the Crypt', release=1990, platforms='Amiga  Atari ST  DOS', description='Platform game where the player enters a mansion full of zombies and other ghastly creatures.')																			
@@ -1364,6 +1525,21 @@ db.session.add(g60)
 g62= Game(title='Hunter: The Reckoning series', release=2002–2003, platforms='GameCube  PlayStation 2  Xbox', description='Trilogy of action games based on the role-playing game  one or more players are tasked with defeating the undead evil that manifests in the town of Ashcroft.')																			
 db.session.add(g62)																			
 g63= Game(title='I Made a Game with Zombies in It!', release=2009, platforms='Xbox 360', description="Released on Microsoft's Xbox Live Indie Games channel  up to four players shoot droves of attacking enemies  including zombies  while collecting power-ups.')																			
+=======
+g57= Game(title='Half-Life series', release=1998–2020, platforms='Windows  macOS  Several consoles', description='The player confronts several alien lifeforms that invaded Earth due to a teleport accident. The most prominent foes are humans zombified by some aliens called 'headcrabs'.')																			
+db.session.add(g57)																			
+g58= Game(title='Horror Zombies from the Crypt', release=1990, platforms='Amiga  Atari ST  DOS', description='Platform game where the player enters a mansion full of zombies and other ghastly creatures.')																			
+db.session.add(g58)																			
+g59= Game(title='How To Survive', release=2013, platforms='PlayStation 3  Windows  Xbox 360  Wii U', description='Twin-stick shooter game where the player must maintain their character's survival needs. A crafting system is included.')																			
+db.session.add(g59)																			
+g60= Game(title='The House of the Dead series', release=1996–2013, platforms='Arcade  Dreamcast  Sega Saturn  Wii  Windows  Xbox', description='Gory light gun Arcade games on rails which feature numerous zombies. It is credited with introducing fast running zombies.')																			
+db.session.add(g60)																			
+g61= Game(title='Human Element', release=Pre-release, platforms='PlayStation 4  Wii U  Windows  Xbox One', description='Survival game set 35 years after a zombie apocalypse. Players must try to rebuild civilization.')																			
+db.session.add(g61)																			
+g62= Game(title='Hunter: The Reckoning series', release=2002–2003, platforms='GameCube  PlayStation 2  Xbox', description='Trilogy of action games based on the role-playing game  one or more players are tasked with defeating the undead evil that manifests in the town of Ashcroft.')																			
+db.session.add(g62)																			
+g63= Game(title='I Made a Game with Zombies in It!', release=2009, platforms='Xbox 360', description='Released on Microsoft's Xbox Live Indie Games channel  up to four players shoot droves of attacking enemies  including zombies  while collecting power-ups.')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(g63)																			
 g64= Game(title='Infected', release=2005, platforms='PlayStation Portable', description='Fast-paced shooter game set two weeks before Christmas in New York City. Players assume the role of a rookie police officer and must rescue civilians from the marauding undead.')																			
 db.session.add(g64)																			
@@ -1371,11 +1547,19 @@ g65= Game(title='Infestation: Survivor Stories', release=2012, platforms='Window
 db.session.add(g65)																			
 g66= Game(title='Isle of the Dead', release=1993, platforms='DOS', description='First-person shooter with adventure game elements  the player is stranded on an island filled with zombies.')																			
 db.session.add(g66)																			
+<<<<<<< HEAD
 g67= Game(title='Judge Dredd: Dredd Vs. Death', release=2003, platforms='GameCube  PlayStation 2  Windows  Xbox', description="First-person shooter  Judge Dredd faces numerous zombies  vampires and mutants whilst attempting to stop Judge Death from destroying the world's population.")																			
 db.session.add(g67)																			
 g68= Game(title='Killing Floor or Killing Floor 2', release=2005, platforms='Linux  macOS  Windows', description='A multi-player mod of the Unreal Engine later released as a standalone game. Players assume the role of squad members that must stop increasingly powerful waves of zombie-like clone soldiers.')																			
 db.session.add(g68)																			
 g69= Game(title="Land of the Dead: Road to Fiddler's Green", release=2005, platforms='Windows  Xbox', description='First-person shooter set within the same universe as the George Romero film Land of the Dead. Players control Jack  a farmer who must fight through different environments in order to find safety within the City of the Living.')																			
+=======
+g67= Game(title='Judge Dredd: Dredd Vs. Death', release=2003, platforms='GameCube  PlayStation 2  Windows  Xbox', description='First-person shooter  Judge Dredd faces numerous zombies  vampires and mutants whilst attempting to stop Judge Death from destroying the world's population.')																			
+db.session.add(g67)																			
+g68= Game(title='Killing Floor or Killing Floor 2', release=2005, platforms='Linux  macOS  Windows', description='A multi-player mod of the Unreal Engine later released as a standalone game. Players assume the role of squad members that must stop increasingly powerful waves of zombie-like clone soldiers.')																			
+db.session.add(g68)																			
+g69= Game(title='Land of the Dead: Road to Fiddler's Green', release=2005, platforms='Windows  Xbox', description='First-person shooter set within the same universe as the George Romero film Land of the Dead. Players control Jack  a farmer who must fight through different environments in order to find safety within the City of the Living.')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(g69)																			
 g70= Game(title='The Last Guy', release=2008, platforms='PlayStation 3', description='An overhead-perspective rescue game in which the player character is a humanity-loving zombie who must guide civilians to escape points in monster-infested cities.')																			
 db.session.add(g70)																			
@@ -1385,12 +1569,17 @@ g72= Game(title='The Last of Us Part II', release=2020, platforms='PlayStation 4
 db.session.add(g72)																			
 g73= Game(title='Left 4 Dead series', release=2008–2009, platforms='macOS  Windows  Xbox 360', description='Multiplayer first-person shooter games in which four survivors must cooperate to survive against the hordes of the infected and mutated monsters in an apocalyptic pandemic.')																			
 db.session.add(g73)																			
+<<<<<<< HEAD
 g74= Game(title='Little Red Riding Hood's Zombie BBQ', release=2008, platforms="Nintendo DS", description="A surreal game where an outbreak of zombies infects many classic fairy tale settings  leaving only Little Red Riding Hood and Momotarō to defend themselves from the invasion.")																			
+=======
+g74= Game(title='Little Red Riding Hood's Zombie BBQ', release=2008, platforms='Nintendo DS', description='A surreal game where an outbreak of zombies infects many classic fairy tale settings  leaving only Little Red Riding Hood and Momotarō to defend themselves from the invasion.')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(g74)																			
 g75= Game(title='Lollipop Chainsaw', release=2012, platforms='PlayStation 3  Xbox 360', description='An action game which stars a chainsaw-wielding cheerleader who must rid her high school of zombies.')																			
 db.session.add(g75)																			
 g76= Game(title='Martian Gothic: Unification', release=2000, platforms='PlayStation  Windows', description='A science fiction survival horror. A trio of astronauts must combat zombies while solving puzzles and piecing together what happened to a research colony on Mars.')																			
 db.session.add(g76)																			
+<<<<<<< HEAD
 g77= Game(title='MediEvil series', release=1998–2007, platforms='PlayStation  PlayStation 3  PlayStation Portable  PlayStation 4 (remake)', description="The series stars Sir Dan  a cowardly knight slain by a wizard's army. 100 years later the same wizard casts a spell to raise an army of undead  raising Sir Dan in the process.")																			
 db.session.add(g77)																			
 g78= Game(title='Minecraft', release=2009, platforms='Windows  Xbox 360  iOS', description='A survival sandbox game where the player needs to survive by building a shelter  and building tools to keep zombies and other monsters away.')																			
@@ -1402,6 +1591,19 @@ db.session.add(g80)
 g81= Game(title='Nightmare Creatures', release=1997-1998, platforms='PlayStation  Windows  Nintendo 64', description="A survival horror game based in the nineteenth century. A devil-worshipping cult called 'The brotherhood of the Hecate' perform ungodly experiments in London to try to create super-humans but instead makes horrid monsters. It contains a wide array of creatures including zombies.")																			
 db.session.add(g81)																			
 g82= Game(title='No More Room in Hell', release=2011–present, platforms='Windows  Linux  macOS  SteamOS', description="A multiplayer-focused survival game  initially created as a Source Engine mod. The game mainly focuses on co-operation and survival rather than dispatching zombies. Heavily inspired by George Romero's Living Dead series  the zombies are mainly slow-moving and are dangerous in large formed groups  though freshly turned cadavers as well as reanimated children move faster due to the lack of rigor mortis.")																			
+=======
+g77= Game(title='MediEvil series', release=1998–2007, platforms='PlayStation  PlayStation 3  PlayStation Portable  PlayStation 4 (remake)', description='The series stars Sir Dan  a cowardly knight slain by a wizard's army. 100 years later the same wizard casts a spell to raise an army of undead  raising Sir Dan in the process.')																			
+db.session.add(g77)																			
+g78= Game(title='Minecraft', release=2009, platforms='Windows  Xbox 360  iOS', description='A survival sandbox game where the player needs to survive by building a shelter  and building tools to keep zombies and other monsters away.')																			
+db.session.add(g78)																			
+g79= Game(title='Monkey Island 2: LeChuck's Revenge', release=1991, platforms='Amiga  DOS  FM Towns  Mac OS', description='Graphic adventure game. The series' antagonist  LeChuck the pirate  is reanimated as a zombie.')																			
+db.session.add(g79)																			
+g80= Game(title='Night Slashers', release=1993, platforms='Arcade', description='')																			
+db.session.add(g80)																			
+g81= Game(title='Nightmare Creatures', release=1997-1998, platforms='PlayStation  Windows  Nintendo 64', description='A survival horror game based in the nineteenth century. A devil-worshipping cult called 'The brotherhood of the Hecate' perform ungodly experiments in London to try to create super-humans but instead makes horrid monsters. It contains a wide array of creatures including zombies.')																			
+db.session.add(g81)																			
+g82= Game(title='No More Room in Hell', release=2011–present, platforms='Windows  Linux  macOS  SteamOS', description='A multiplayer-focused survival game  initially created as a Source Engine mod. The game mainly focuses on co-operation and survival rather than dispatching zombies. Heavily inspired by George Romero's Living Dead series  the zombies are mainly slow-moving and are dangerous in large formed groups  though freshly turned cadavers as well as reanimated children move faster due to the lack of rigor mortis.')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(g82)																			
 g83= Game(title='The OneChanbara series', release=2000–present, platforms='PlayStation 2  PlayStation 3  PlayStation 4  PlayStation Portable  Wii  Xbox 360', description='Hack and slash games involving a bikini-clad female protagonist cutting swathes through an army of undead with a katana.')																			
 db.session.add(g83)																			
@@ -1435,6 +1637,7 @@ g97= Game(title='Shadow Man', release=1999, platforms='Dreamcast  Nintendo 64  P
 db.session.add(g97)																			
 g98= Game(title='Shellshock 2: Blood Trails', release=2009, platforms='PlayStation 3  Windows  Xbox 360', description='First-person shooter  a zombie outbreak in Vietnam during the Vietnam War is caused by a virus called WhiteKnight.')																			
 db.session.add(g98)																			
+<<<<<<< HEAD
 g99= Game(title='Siren series', release=2003–2008, platforms='PlayStation 2  PlayStation 3', description="Survival horror series. The primary enemies of the game  'shibito' (屍人)  are living dead who can be 'sightjacked' by the player  allowing them to observe the gameworld through the shibito's eyes.")																			
 db.session.add(g99)																			
 g100= Game(title='Space Pirates and Zombies', release=2011, platforms='Windows', description='A shooter game set in space  containing role-playing and strategy elements. The titular zombies emerge late in the game and operate in a similar manner to the Borg of Star Trek  by assimilating space ships and crew into an undead horde.')																			
@@ -1442,6 +1645,15 @@ db.session.add(g100)
 g101= Game(title='State of Decay', release=2013, platforms='Windows  Xbox Live Arcade', description="Unlike games such as Left 4 Dead and Dead Island  State of Decay will focus more on survival  stealth  evasion  distractions  securing the player's resources  and moving through the world than actual zombie combat.")																			
 db.session.add(g101)																			
 g102= Game(title='State of Decay 2', release=2018, platforms='Windows  Xbox One', description="Sequel to State of Decay. It places emphasis on how the player's leaderships skills fare against an onslaught of problems  such as diminishing survival resources  group trust and morale  zombie extermination  base defenses  and people's lives. The game combines elements of shooters  stealth  role-playing and strategy games and the game challenges players to survive by exploring  scavenging  and fighting the undead.")																			
+=======
+g99= Game(title='Siren series', release=2003–2008, platforms='PlayStation 2  PlayStation 3', description='Survival horror series. The primary enemies of the game  'shibito' (屍人)  are living dead who can be 'sightjacked' by the player  allowing them to observe the gameworld through the shibito's eyes.')																			
+db.session.add(g99)																			
+g100= Game(title='Space Pirates and Zombies', release=2011, platforms='Windows', description='A shooter game set in space  containing role-playing and strategy elements. The titular zombies emerge late in the game and operate in a similar manner to the Borg of Star Trek  by assimilating space ships and crew into an undead horde.')																			
+db.session.add(g100)																			
+g101= Game(title='State of Decay', release=2013, platforms='Windows  Xbox Live Arcade', description='Unlike games such as Left 4 Dead and Dead Island  State of Decay will focus more on survival  stealth  evasion  distractions  securing the player's resources  and moving through the world than actual zombie combat.')																			
+db.session.add(g101)																			
+g102= Game(title='State of Decay 2', release=2018, platforms='Windows  Xbox One', description='Sequel to State of Decay. It places emphasis on how the player's leaderships skills fare against an onslaught of problems  such as diminishing survival resources  group trust and morale  zombie extermination  base defenses  and people's lives. The game combines elements of shooters  stealth  role-playing and strategy games and the game challenges players to survive by exploring  scavenging  and fighting the undead.')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(g102)																			
 g103= Game(title='Stubbs the Zombie in Rebel Without a Pulse', release=2005, platforms='macOS  Windows  Xbox  Xbox 360', description='A third-person comedy game played as the titular zombie. Humans are converted into zombies when killed by Stubbs  creating an army of zombies.')																			
 db.session.add(g103)																			
@@ -1455,11 +1667,19 @@ g107= Game(title='They Hunger series', release=1999, platforms='Windows', descri
 db.session.add(g107)																			
 g108= Game(title='TimeSplitters: Future Perfect', release=2005, platforms='PS2  Xbox  GameCube', description='The third installment of the popular time travel-themed first-person shooter contained playable multiplayer characters and enemy AI that are commonly referred to as Zombies.')																			
 db.session.add(g108)																			
+<<<<<<< HEAD
 g109= Game(title='Touch the Dead', release=2007, platforms='Nintendo DS', description="On-rail  first-person shooter. A prisoner named Rob Steiner escapes from jail while battling countless zombies  the player attacks by using the console's touchscreen.")																			
 db.session.add(g109)																			
 g110= Game(title='The Typing of the Dead', release=1999, platforms='Dreamcast  Windows', description='A touch typing trainer version of The House of the Dead 2.')																			
 db.session.add(g110)																			
 g111= Game(title='Undead Knights', release=2009, platforms='PlayStation Portable', description="A hack 'n slash game featuring a trio of undead knights who can reanimate their victims as zombies and send them into battle.")																			
+=======
+g109= Game(title='Touch the Dead', release=2007, platforms='Nintendo DS', description='On-rail  first-person shooter. A prisoner named Rob Steiner escapes from jail while battling countless zombies  the player attacks by using the console's touchscreen.')																			
+db.session.add(g109)																			
+g110= Game(title='The Typing of the Dead', release=1999, platforms='Dreamcast  Windows', description='A touch typing trainer version of The House of the Dead 2.')																			
+db.session.add(g110)																			
+g111= Game(title='Undead Knights', release=2009, platforms='PlayStation Portable', description='A hack 'n slash game featuring a trio of undead knights who can reanimate their victims as zombies and send them into battle.')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(g111)																			
 g112= Game(title='Unturned', release=2014, platforms='PlayStation 4  Mac  Windows  Xbox One  Xbox Series X', description='A multiplayer survival game described by one critic as a combination of Dayz and Minecraft. The game uses the free-to-play payment model.')																			
 db.session.add(g112)																			
@@ -1467,7 +1687,11 @@ g113= Game(title='Urban Dead', release=2005, platforms='Browser', description='A
 db.session.add(g113)																			
 g114= Game(title='Voodoo Kid', release=1997, platforms='Windows', description='The artistic concept of the game is heavily based on voodoo culture. All characters excluding the unnamed protagonist are soulless zombies bounded to a ghost ship.')																			
 db.session.add(g114)																			
+<<<<<<< HEAD
 g115= Game(title='The Walking Dead', release=2012, platforms='Android  iOS  Kindle Fire HDX  macOS  PlayStation 3  PlayStation 4  Ouya  PlayStation Vita  Windows  Xbox 360  Xbox One', description="Based on the comic series and being developed by Telltale Games  this licensed video game is due to be 'multi-year  multi-platform  multi-title'.")																			
+=======
+g115= Game(title='The Walking Dead', release=2012, platforms='Android  iOS  Kindle Fire HDX  macOS  PlayStation 3  PlayStation 4  Ouya  PlayStation Vita  Windows  Xbox 360  Xbox One', description='Based on the comic series and being developed by Telltale Games  this licensed video game is due to be 'multi-year  multi-platform  multi-title'.')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(g115)																			
 g116= Game(title='The Walking Dead: Survival Instinct', release=2013, platforms='PlayStation 3  Wii U  Windows  Xbox 360', description='')																			
 db.session.add(g116)																			
@@ -1479,9 +1703,15 @@ g119= Game(title='World War Z', release=2019, platforms='Microsoft Windows  Play
 db.session.add(g119)																			
 g120= Game(title='The X-Files: Resist or Serve', release=2004, platforms='PlayStation 2', description='A survival horror game based on the television series  The X-Files. The player can play as either Fox Mulder or Dana Scully  who are investigating a town overrun by zombies.')																			
 db.session.add(g120)																			
+<<<<<<< HEAD
 g121= Game(title='Yakuza: Dead Souls', release=2011, platforms='PlayStation 3', description="Part of Sega's Yakuza series  the martial combat of previous titles has been replaced with an emphasis on gun battles. The city has been infected with a zombie plague and now a third of the population are zombies.")																			
 db.session.add(g121)																			
 g122= Game(title='Zafehouse: Diaries series', release=2012, platforms='Windows', description="Single-player turn-based strategy games  portrayed mostly via a map and diary. The games require management of survivors' interpersonal relationships in addition to standard zombie survival actions.")																			
+=======
+g121= Game(title='Yakuza: Dead Souls', release=2011, platforms='PlayStation 3', description='Part of Sega's Yakuza series  the martial combat of previous titles has been replaced with an emphasis on gun battles. The city has been infected with a zombie plague and now a third of the population are zombies.')																			
+db.session.add(g121)																			
+g122= Game(title='Zafehouse: Diaries series', release=2012, platforms='Windows', description='Single-player turn-based strategy games  portrayed mostly via a map and diary. The games require management of survivors' interpersonal relationships in addition to standard zombie survival actions.')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(g122)																			
 g123= Game(title='Zombi', release=1986, platforms='Amiga  Amstrad CPC  Atari ST  Commodore 64  Commodore Plus/4  ZX Spectrum', description='Icon-driven graphic adventure inspired by the film Dawn of the Dead. A group of survivors is forced to land their helicopter atop a zombie infested shopping mall  the vehicle must be refueled so they can escape.')																			
 db.session.add(g123)																			
@@ -1501,17 +1731,29 @@ g130= Game(title='Zombie Lane', release=2011, platforms='Facebook  Google+  iOS'
 db.session.add(g130)																			
 g131= Game(title='Zombie Massacre', release=1998, platforms='Amiga', description='First-person shooter  clone of the popular Amiga first person shooter Doom')																			
 db.session.add(g131)																			
+<<<<<<< HEAD
 g132= Game(title='Zombie Nation', release=1990, platforms='NES', description="Shoot 'em up in which players control a disembodied samurai's head. A mysterious meteor called Darc Seed crashes to Earth and turns the inhabitants of the United States into zombies.")																			
+=======
+g132= Game(title='Zombie Nation', release=1990, platforms='NES', description='Shoot 'em up in which players control a disembodied samurai's head. A mysterious meteor called Darc Seed crashes to Earth and turns the inhabitants of the United States into zombies.')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(g132)																			
 g133= Game(title='Zombie Panic! Source', release=2007, platforms='Windows', description='A multiplayer Half-Life 2 mod  in which players are divided into two teams  survivors and zombies. When survivors are killed  they become zombies.')																			
 db.session.add(g133)																			
 g134= Game(title='Zombie Parkour Runner', release=2011, platforms='iOS', description='A parkour game where the player must retrieve the items stolen from them by zombies.')																			
 db.session.add(g134)																			
+<<<<<<< HEAD
 g135= Game(title='Zombie Revenge', release=1999, platforms='Arcade  Dreamcast', description="Beat 'em up where players choose one of three characters to pummel zombies.")																			
 db.session.add(g135)																			
 g136= Game(title='Zombie Tycoon', release=2009, platforms='PlayStation Portable', description='Downloadable real-time strategy game. Players control three teams of up to eight zombies to attack the living.')																			
 db.session.add(g136)																			
 g137= Game(title='Zombie Wranglers', release=2009, platforms='Xbox 360', description="An Xbox Live game where players choose one of four characters to 'wrangle' zombies through twenty levels.")																			
+=======
+g135= Game(title='Zombie Revenge', release=1999, platforms='Arcade  Dreamcast', description='Beat 'em up where players choose one of three characters to pummel zombies.')																			
+db.session.add(g135)																			
+g136= Game(title='Zombie Tycoon', release=2009, platforms='PlayStation Portable', description='Downloadable real-time strategy game. Players control three teams of up to eight zombies to attack the living.')																			
+db.session.add(g136)																			
+g137= Game(title='Zombie Wranglers', release=2009, platforms='Xbox 360', description='An Xbox Live game where players choose one of four characters to 'wrangle' zombies through twenty levels.')																			
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(g137)																			
 g138= Game(title='Zombie Zombie', release=1984, platforms='ZX Spectrum', description='The player must rid a city of the undead by luring them over the edge of structures. These can be constructed with a helicopter  which can be landed to allow the zombies to pursue the player character.')																			
 db.session.add(g138)																			
@@ -1535,7 +1777,11 @@ b4= Book(title='Autumn: The Human Condition', author='Moody, David', artist='', 
 db.session.add(b4)																					
 b5= Book(title='Autumn: Purification', author='Moody, David', artist='', release=2004, description='The third novel in the Autumn series revolves around a military bunker sealed off from the outside world.')																					
 db.session.add(b5)																					
+<<<<<<< HEAD
 b6= Book(title='The Awakening', author='McBean, Brett', artist='', release=2012, description="A coming-of-age novel concerning a teenager's tumultuous summer as he deals with the joys and hardships of growing up, while learning about the value of freedom at the hands of a kind but cursed old man. Contains strong elements of traditional Haitian Vodou and zombies.")																					
+=======
+b6= Book(title='The Awakening', author='McBean, Brett', artist='', release=2012, description='A coming-of-age novel concerning a teenager's tumultuous summer as he deals with the joys and hardships of growing up, while learning about the value of freedom at the hands of a kind but cursed old man. Contains strong elements of traditional Haitian Vodou and zombies.')																					
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(b6)																					
 b7= Book(title='Blackout', author='Grant, Mira', artist='', release=2011, description='Third novel in the Newsflesh series, following Deadline.')																					
 db.session.add(b7)																					
@@ -1543,13 +1789,21 @@ b8= Book(title='Bone Song', author='Meaney, John', artist='', release=2008, desc
 db.session.add(b8)																					
 b9= Book(title='The Boy on the Bridge', author='Carey, M.R.', artist='', release=2017, description='A prequel to The Girl with All the Gifts.')																					
 db.session.add(b9)																					
+<<<<<<< HEAD
 b10= Book(title='Breathers: A Zombie's Lament', author='Browne, S. G.', artist='', release=2009, description="A dark, comedic take on zombies told from the point of view of a recently reanimated corpse.")																					
+=======
+b10= Book(title='Breathers: A Zombie's Lament', author='Browne, S. G.', artist='', release=2009, description='A dark, comedic take on zombies told from the point of view of a recently reanimated corpse.')																					
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(b10)																					
 b11= Book(title='Cell', author='King, Stephen', artist='', release=2006, description='Anyone talking on a cell phone after a particular event becomes an aggressive, bloodthirsty zombie.')																					
 db.session.add(b11)																					
 b12= Book(title='City of the Dead', author='Keene, Brian', artist='', release=2005, description='This is the official follow-up to The Rising. Demons possess the bodies of the dead, including animals. One man attempts to reach his son.')																					
 db.session.add(b12)																					
+<<<<<<< HEAD
 b13= Book(title='Conan the Defiant', author='Perry, Steve', artist='', release=1987, description="One of Conan's companions, Tuanne, is a beautiful zombie; he is romantically interested in her.")																					
+=======
+b13= Book(title='Conan the Defiant', author='Perry, Steve', artist='', release=1987, description='One of Conan's companions, Tuanne, is a beautiful zombie; he is romantically interested in her.')																					
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(b13)																					
 b14= Book(title='The Dead', author='Higson, Charlie', artist='', release=2010, description='A young adult novel. Adults over sixteen turn to zombies and young survivors battle against them.')																					
 db.session.add(b14)																					
@@ -1559,11 +1813,19 @@ b16= Book(title='Dead of Night', author='Maberry, Jonathan', artist='', release=
 db.session.add(b16)																					
 b17= Book(title='Dead North: The Exile Book of Canadian Zombie Fiction', author='Moreno-Garcia, Silvia (Editor)', artist='', release=2007, description='Collection of twenty short stories from various authors, including Gemma Files, Claude Lalumière, Simon Strantzas, and Richard Van Camp.')																					
 db.session.add(b17)																					
+<<<<<<< HEAD
 b18= Book(title='Dead Sea', author='Keene, Brian', artist='', release=2007, description="A zombie apocalypse starts with undead rats emerging from Baltimore's sewers.")																					
 db.session.add(b18)																					
 b19= Book(title='Deadline', author='Grant, Mira', artist='', release=2011, description='Second novel in the Newsflesh series, following Feed and followed by Blackout.')																					
 db.session.add(b19)																					
 b20= Book(title='Death Troopers', author='Schreiber, Joe', artist='', release=2009, description="A story in the Star Wars universe about an Imperial prison ship stranded in space, encountering another ship crammed with the ship's crew, which have been turned into zombies due to a bio-weapon the ship was carrying.")																					
+=======
+b18= Book(title='Dead Sea', author='Keene, Brian', artist='', release=2007, description='A zombie apocalypse starts with undead rats emerging from Baltimore's sewers.')																					
+db.session.add(b18)																					
+b19= Book(title='Deadline', author='Grant, Mira', artist='', release=2011, description='Second novel in the Newsflesh series, following Feed and followed by Blackout.')																					
+db.session.add(b19)																					
+b20= Book(title='Death Troopers', author='Schreiber, Joe', artist='', release=2009, description='A story in the Star Wars universe about an Imperial prison ship stranded in space, encountering another ship crammed with the ship's crew, which have been turned into zombies due to a bio-weapon the ship was carrying.')																					
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(b20)																					
 b21= Book(title='Die for Me', author='Plum, Amy', artist='', release=2011, description='The main heroine befriends a group of revenant zombies who sacrifice their lives to save humans, and falls in love with one of them.')																					
 db.session.add(b21)																					
@@ -1575,13 +1837,21 @@ b24= Book(title='The End', author='Higson, Charlie', artist='', release=2012, de
 db.session.add(b24)																					
 b25= Book(title='The Fallen', author='Higson, Charlie', artist='', release=2013, description='A post-apocalyptic young adult horror novel and the fifth book in a planned seven-book series, titled The Enemy.')																					
 db.session.add(b25)																					
+<<<<<<< HEAD
 b26= Book(title='The Fear', author='Higson, Charlie', artist='', release=2011, description="A young adult novel. Surviving youths battle 'mothers' and 'fathers' who have fallen ill.")																					
+=======
+b26= Book(title='The Fear', author='Higson, Charlie', artist='', release=2011, description='A young adult novel. Surviving youths battle 'mothers' and 'fathers' who have fallen ill.')																					
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(b26)																					
 b27= Book(title='Feed', author='Grant, Mira', artist='', release=2010, description='News reporters blogging in a world that has, in the main, survived a zombie apocalypse; first novel in the Newsflesh series, followed by Deadline.')																					
 db.session.add(b27)																					
 b28= Book(title='Feedback', author='Grant, Mira', artist='', release=2016, description='The fourth novel in the Newsflesh series, Feedback covers the same time period as Feed from the perspective of a different set of characters.')																					
 db.session.add(b28)																					
+<<<<<<< HEAD
 b29= Book(title='The Forest of Hands and Teeth', author='Ryan, Carrie', artist='', release=2009, description="Teen book. In a village generations after the zombie apocalypse a 16-year-old struggles with her town's religious rules until the village walls are breached and she is forced to flee into the woods.")																					
+=======
+b29= Book(title='The Forest of Hands and Teeth', author='Ryan, Carrie', artist='', release=2009, description='Teen book. In a village generations after the zombie apocalypse a 16-year-old struggles with her town's religious rules until the village walls are breached and she is forced to flee into the woods.')																					
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(b29)																					
 b30= Book(title='Friday the 13th: The Jason Strain', author='Faust, Christa', artist='', release=2006, description='An attempt at replicating the immortality and healing factor of Jason Voorhees goes wrong, and results in a zombie plague.')																					
 db.session.add(b30)																					
@@ -1591,7 +1861,11 @@ b32= Book(title='Generation Dead', author='Waters, Daniel', artist='', release=2
 db.session.add(b32)																					
 b33= Book(title='The Girl with All the Gifts', author='Carey, M.R.', artist='', release=2014, description='In a dystopian future, most of humanity is wiped out by a fungal infection. The infected quickly lose their mental powers and feed on the flesh of healthy humans. In 2017, Carey published a prequel, The Boy on the Bridge.')																					
 db.session.add(b33)																					
+<<<<<<< HEAD
 b34= Book(title='Handling the Undead', author='Lindqvist, John Ajvide', artist='', release=2005, description="During a massive heatwave the unexplained resurrection of thousands of recently deceased people begins in Stockholm, Sweden. David, whose wife has recently died, has gone to the morgue to identify remains of his lost love only to find that she has begun to move. It's terrifying to David, but gives him a strange kind of hope.")																					
+=======
+b34= Book(title='Handling the Undead', author='Lindqvist, John Ajvide', artist='', release=2005, description='During a massive heatwave the unexplained resurrection of thousands of recently deceased people begins in Stockholm, Sweden. David, whose wife has recently died, has gone to the morgue to identify remains of his lost love only to find that she has begun to move. It's terrifying to David, but gives him a strange kind of hope.')																					
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(b34)																					
 b35= Book(title='Herbert West--Reanimator', author='Lovecraft, H.P.', artist='', release=1921, description='Medical doctor invents a serum that re-animates corpses.')																					
 db.session.add(b35)																					
@@ -1601,7 +1875,11 @@ b37= Book(title='The Hunted', author='Higson, Charlie', artist='', release=2014,
 db.session.add(b37)																					
 b38= Book(title='Husk', author='Redekop, Corey', artist='', release=2012, description='A blackly humorous take on the genre, as an unwilling but terribly hungry zombie strives to continue his career as an actor.')																					
 db.session.add(b38)																					
+<<<<<<< HEAD
 b39= Book(title='Illuminatus!', author='Shea, Robert and Wilson, Robert Anton', artist='', release=1976, description="In the third volume, Leviathan, opens with a rock festival on the shores of Lake Totenkopf in Bavaria. Unknown to all except the heroes and the villains, the bodies of an entire division of the Waffen-SS were interred on an underwater plateau supported by a 'biomystical field' to maintain bodily integrity. At the climax of the festival, they will return to life as zombies, surface, and slaughter all 250,000 hippies at the festival.")																					
+=======
+b39= Book(title='Illuminatus!', author='Shea, Robert and Wilson, Robert Anton', artist='', release=1976, description='In the third volume, Leviathan, opens with a rock festival on the shores of Lake Totenkopf in Bavaria. Unknown to all except the heroes and the villains, the bodies of an entire division of the Waffen-SS were interred on an underwater plateau supported by a 'biomystical field' to maintain bodily integrity. At the climax of the festival, they will return to life as zombies, surface, and slaughter all 250,000 hippies at the festival.')																					
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(b39)																					
 b40= Book(title='Kiss of Life', author='Waters, Daniel', artist='', release=2009, description='Teen book. Sequel to Generation Dead.')																					
 db.session.add(b40)																					
@@ -1619,7 +1897,11 @@ b46= Book(title='Les morts ont marché', author='Mathieu Fortin', artist='', rel
 db.session.add(b46)																					
 b47= Book(title='Necromancer', author='Scott, Harper', artist='', release=2009, description='Sequel to Predators or Prey?. Monster hunter Wendy Markland fights zombies in the Pine Barrens of New Jersey.')																					
 db.session.add(b47)																					
+<<<<<<< HEAD
 b48= Book(title='On the Far Side of the Cadillac Desert With Dead Folks', author='Lansdale, Joe R.', artist='', release=1989, description="A bounty hunter chases his quarry in a land where the 'dead folks' have re-animated due to a bacterium which has escaped a lab.")																					
+=======
+b48= Book(title='On the Far Side of the Cadillac Desert With Dead Folks', author='Lansdale, Joe R.', artist='', release=1989, description='A bounty hunter chases his quarry in a land where the 'dead folks' have re-animated due to a bacterium which has escaped a lab.')																					
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(b48)																					
 b49= Book(title='On Stranger Tides', author='Powers, Tim', artist='', release=1988, description='Puppeteer John Chandagnac, who was sailing to Jamaica, has no choice but to join the buccaneers who have taken him prisoner. Blackbeard is assembling an empire of ruthless navy of pirates, living and undead, to voyage to the fabled Fountain of Youth. John, now known as Jack Shandy, tries to free himself from Blackbeard's deadly supernatural domination.')																					
 db.session.add(b49)																					
@@ -1627,7 +1909,11 @@ b50= Book(title='Patient Zero: A Joe Ledger Novel', author='Maberry, Jonathan', 
 db.session.add(b50)																					
 b51= Book(title='Pontypool Changes Everything', author='Burgess, Tony', artist='', release=1998, description='The dark side of humanity as an epidemic virus terrorizes the earth.')																					
 db.session.add(b51)																					
+<<<<<<< HEAD
 b52= Book(title='Pride and Prejudice and Zombies', author='Grahame-Smith, Seth', artist='', release=2009, description="Mashup combining Jane Austen's classic 1813 novel Pride and Prejudice with elements of modern zombie fiction.")																					
+=======
+b52= Book(title='Pride and Prejudice and Zombies', author='Grahame-Smith, Seth', artist='', release=2009, description='Mashup combining Jane Austen's classic 1813 novel Pride and Prejudice with elements of modern zombie fiction.')																					
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(b52)																					
 b53= Book(title='Pride and Prejudice and Zombies: Dawn of the Dreadfuls', author='Hockensmith, Steve', artist='', release=2010, description='Prequel to Pride and Prejudice and Zombies.')																					
 db.session.add(b53)																					
@@ -1655,7 +1941,11 @@ b64= Book(title='The Rising', author='Keene, Brian', artist='', release=2004, de
 db.session.add(b64)																					
 b65= Book(title='The Sacrifice', author='Higson, Charlie', artist='', release=2012, description='A post-apocalyptic young adult horror novel and the fourth book in a planned seven-book series, titled The Enemy.')																					
 db.session.add(b65)																					
+<<<<<<< HEAD
 b66= Book(title='The Stupidest Angel: A Heartwarming Tale of Christmas Terror', author='Moore, Christopher', artist='', release=2004, description="In his inept attempt to bring 'Santa' back to life, an angel causes the townspeople of Pine Cove to fall under siege by brain-hungry zombies who arise from their burial plots.")																					
+=======
+b66= Book(title='The Stupidest Angel: A Heartwarming Tale of Christmas Terror', author='Moore, Christopher', artist='', release=2004, description='In his inept attempt to bring 'Santa' back to life, an angel causes the townspeople of Pine Cove to fall under siege by brain-hungry zombies who arise from their burial plots.')																					
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(b66)																					
 b67= Book(title='Undead', author='Russo, John A.', artist='', release=2010, description='A novelization of Night of the Living Dead and a sequel called Return of the Living Dead.')																					
 db.session.add(b67)																					
@@ -1663,15 +1953,25 @@ b68= Book(title='The Undead: Zombie Anthology', author='Snell, D. L. (Editor), H
 db.session.add(b68)																					
 b69= Book(title='Under a Graveyard Sky', author='Ringo, John', artist='', release=2013, description='The story of a family escaping a zombie epidemic in the US on a sailboat and the beginning of the process of finding survivors on the high seas as a prelude to retaking the mainland. Book one of the Black Tide Rising series.')																					
 db.session.add(b69)																					
+<<<<<<< HEAD
 b70= Book(title='The Walking Dead: Rise of the Governor', author='Kirkman, Robert and Bonasinga, Jay', artist='', release=2011, description="It depicts the journey of Philip Blake in the early days of the undead apocalypse to his eventual rise as 'The Governor' of Woodbury.")																					
 db.session.add(b70)																					
 b71= Book(title='The Walking Dead: The Road to Woodbury', author='Kirkman, Robert and Bonasinga, Jay', artist='', release=2012, description="It follows the travails of Lilly Caul who finds herself coming in contact with the 'Governor' of Woodbury, a refuge amongst the zombie apocalypse that is not what it seems. The second of a planned trilogy.")																					
+=======
+b70= Book(title='The Walking Dead: Rise of the Governor', author='Kirkman, Robert and Bonasinga, Jay', artist='', release=2011, description='It depicts the journey of Philip Blake in the early days of the undead apocalypse to his eventual rise as 'The Governor' of Woodbury.')																					
+db.session.add(b70)																					
+b71= Book(title='The Walking Dead: The Road to Woodbury', author='Kirkman, Robert and Bonasinga, Jay', artist='', release=2012, description='It follows the travails of Lilly Caul who finds herself coming in contact with the 'Governor' of Woodbury, a refuge amongst the zombie apocalypse that is not what it seems. The second of a planned trilogy.')																					
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(b71)																					
 b72= Book(title='Warm Bodies', author='Marion, Isaac', artist='', release=2010, description='R is a zombie who is a little different than his fellow Dead. He meets Julie Grigio, a Living girl, and ends up falling in love.')																					
 db.session.add(b72)																					
 b73= Book(title='World War Z', author='Brooks, Max', artist='', release=2007, description='An oral history told by many survivors of the start, during, and aftermath of the zombie apocalypse.')																					
 db.session.add(b73)																					
+<<<<<<< HEAD
 b74= Book(title='Zom-B', author='Shan, Darren', artist='', release=2012, description="Series of 13 books written from 2012-2016 for teenagers. When zombies attack B's school, B is forced on a mad dash through the serpentine corridors, making allegiances with anyone with enough guts to fight off their pursuers.")																					
+=======
+b74= Book(title='Zom-B', author='Shan, Darren', artist='', release=2012, description='Series of 13 books written from 2012-2016 for teenagers. When zombies attack B's school, B is forced on a mad dash through the serpentine corridors, making allegiances with anyone with enough guts to fight off their pursuers.')																					
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(b74)																					
 b75= Book(title='Zombie Apocalypse!', author='Jones, Stephen', artist='', release=2010, description='A mosaic novel in which interconnected narratives create a unique vision of the end of the world brought about by a plague.')																					
 db.session.add(b75)																					
@@ -1681,9 +1981,15 @@ b77= Book(title='The Zombie Survival Guide', author='Brooks, Max', artist='', re
 db.session.add(b77)																					
 b78= Book(title='Zombies: A Record of the Year of Infection', author='Roff, Don', artist='', release=2009, description='A man writes in his bird watching journal about trying to survive in a zombie apocalypse.')																					
 db.session.add(b78)																					
+<<<<<<< HEAD
 b79= Book(title='Zone One', author='Whitehead, Colson', artist='', release=2011, description="Mark Spitz is a 'sweeper,' clearing away stragglers from Manhattan's Zone One district after the zombie attacks. These trapped souls are malfunctioning zombies, destined to ceaselessly repeat mundane acts they carried out while alive.")																					
 db.session.add(b79)																					
 b80= Book(title="Gospel of the Living Dead: George Romero's Visions of Hell on Earth", author='Paffenroth, Kim', artist='', release=2006, description='Non-Fiction')																					
+=======
+b79= Book(title='Zone One', author='Whitehead, Colson', artist='', release=2011, description='Mark Spitz is a 'sweeper,' clearing away stragglers from Manhattan's Zone One district after the zombie attacks. These trapped souls are malfunctioning zombies, destined to ceaselessly repeat mundane acts they carried out while alive.')																					
+db.session.add(b79)																					
+b80= Book(title='Gospel of the Living Dead: George Romero's Visions of Hell on Earth', author='Paffenroth, Kim', artist='', release=2006, description='Non-Fiction')																					
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(b80)																					
 b81= Book(title='Theories of International Politics and Zombies', author='Drezner, Daniel W.', artist='', release=2010, description='Non-Fiction')																					
 db.session.add(b81)																					
@@ -1749,7 +2055,11 @@ b111= Book(title='Rebel Blood', author='Riley Rossmo and Alex Link', artist='Ril
 db.session.add(b111)																					
 b112= Book(title='Remains', author='Niles, Steve', artist='Dwyer, Kieron', release=2004, description='#1-5')																					
 db.session.add(b112)																					
+<<<<<<< HEAD
 b113= Book(title='Resident Evil', author='Paul W. S. Anderson', artist="Odagawa, Ryan, Bermejo, Lee and D'Anda, Carlos", release=1998, description='#1-5')																					
+=======
+b113= Book(title='Resident Evil', author='Paul W. S. Anderson', artist='Odagawa, Ryan, Bermejo, Lee and D'Anda, Carlos', release=1998, description='#1-5')																					
+>>>>>>> 27c2f0b7245eb23272ada407ad619e09bb98db0e
 db.session.add(b113)																					
 b114= Book(title='Resident Evil Code: Veronica', author='Chung Hing, Lee and King Sum, Hui', artist='King Sum, Hui', release=2002, description='#1-4')																					
 db.session.add(b114)																					
