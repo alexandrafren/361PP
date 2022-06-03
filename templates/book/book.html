@@ -10,17 +10,16 @@
         <div><img src="{{template_book.image}}"></img></div>
         <div>
             <h3>Reviews:</h3>
-            <a href="#">Add/Edit Review</a>
             <br/>
             {% for rev in template_reviews %}
                 <div>{{rev.user}} says: </div>
                 <div>{{rev.text}}</div>
             {% endfor %}
             <div>Add A Review:
-                <form method="POST" action="/newreview">
+                <form method="POST" action="/newbookreview">
                     <input class="input" type="text" name="review" placeholder="Add your review ... ">
                     <!-- Pass the Media ID through the Form -->
-                    <input class="input" type="text" name="">
+                    <input class="input" type="hidden" name="book_id" value={{template_book.id}}>
                     <button class="button">Add</button>
                 </form>
             </div>

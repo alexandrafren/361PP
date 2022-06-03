@@ -7,29 +7,27 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
     </head>
     <body>
-        <section class="hero is-primary is-fullheight">
-            <h1 class="title" style="text-align: center;"> Untitled Zombie Tracker</h1>
-            <div class="hero-head">
                 <nav class="navbar">
                     <div class="container">
-                        <div id="navbarMenuHeroA">
-                            <div class="navbar-end">
-                                <a href="/tv" class="navbar-item">TV</a>
-                                <a href="/movies" class="navbar-item">Movies</a>
-                                <a href="/books" class="navbar-item">Books</a>
-                                <a href="/games" class="navbar-item">Games</a>
-                                <a href="/profile" class="navbar-item">Profile</a>
+                            <div class="navbar-brand">
+                                <a href="/"><img style="height: 80px;; width:80px"src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/114/zombie_1f9df.png"></a>
                             </div>
-                        </div>
+                            <div class="navbar-menu">
+                                <div class="navbar-end">
+                                    <a href="/tv" class="navbar-item">TV</a>
+                                    <a href="/movies" class="navbar-item">Movies</a>
+                                    <a href="/books" class="navbar-item">Books</a>
+                                    <a href="/games" class="navbar-item">Games</a>
+                                    <a href="/profile" class="navbar-item">Profile</a>
+                                </div>
+                            </div>
                     </div>
                 </nav>
-            </div>
             <div class="hero-body">
                 <div class="container has-text-centered">
             {% block content %} {% endblock %}
                 </div>
             </div>
-        </section>
     </body>
 </html>
 

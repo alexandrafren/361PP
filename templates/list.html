@@ -2,7 +2,16 @@
 {% block content %}
 <p> {{ template_list.title | title }}!</p>
 <br />
-    {% for book in template_items %}
+    {% for book in template_books %}
         <li><a href=/books/{{book.id}}>{{book.title}}</a></li>
+    {% endfor %}
+    {% for game in template_games %}
+    <li><a href=/games/{{game.id}}>{{game.title}}</a></li>
+    {% endfor %}
+    {% for movie in template_movies %}
+    <li><a href=/movies/{{movie.id}}>{{movie.title}}</a></li>
+    {% endfor %}
+    {% for show in template_shows %}
+    <li><a href=/tv/{{show.id}}>{{show.title}}</a></li>
     {% endfor %}
 {% endblock %}
