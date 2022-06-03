@@ -1,6 +1,5 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for, flash
-from helpers.movies import movies, descriptions
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -31,7 +30,7 @@ shows_all = Show.query.all()
 for show in shows_all:
     translator = str.maketrans('', '', string.punctuation)
     title = show.title.translate(translator)
-    product_dict = {"product": show.title + " tv show"}
+    product_dict = {"product": show.title + " show"}
     product_json = json.dumps(product_dict, indent=4)
     details = requests.get("http://127.0.0.1:5000/", json=product_json)
     show.image = details.json()['product_image']
@@ -67,18 +66,18 @@ def home():
     games = Game.query.limit(10).all()
     return render_template("index.html", template_books=books, template_shows = shows, template_movies = movies, template_games = games)
 
-@app.route('/tv')
-def tv():
+@app.route('/shows')
+def show():
     shows_all = Show.query.all()
-    return render_template("tv/tvs.html", template_shows=shows_all)
+    return render_template("show/shows.html", template_shows=shows_all)
 
-@app.route('/tv/<int:tv_id>')
-def specific_tv(tv_id):
-    spec_show = Show.query.get(tv_id)
-    revs = ShowReview.query.filter(ShowReview.show_id == tv_id)
+@app.route('/shows/<int:show_id>')
+def specific_show(show_id):
+    spec_show = Show.query.get(show_id)
+    revs = ShowReview.query.filter(ShowReview.show_id == show_id)
     for i, elem in enumerate(revs):
         revs[i].user = Reviewer.query.get(elem.reviewer_id).username
-    return render_template("tv/tv.html", template_show=spec_show, template_lists = get_current_lists(), template_reviews = revs)
+    return render_template("show/show.html", template_show=spec_show, template_lists = get_current_lists(), template_reviews = revs)
 
 @app.route('/movies')
 def movies():
@@ -211,7 +210,7 @@ def new_show_review():
     revs = ShowReview.query.filter(ShowReview.show_id == show_id)
     for i, elem in enumerate(revs):
         revs[i].user = Reviewer.query.get(elem.reviewer_id).username
-    return render_template("tv/tv.html", template_show=spec_show, template_lists = get_current_lists(), template_reviews = revs)
+    return render_template("show/show.html", template_show=spec_show, template_lists = get_current_lists(), template_reviews = revs)
 
 @app.route('/lists/<int:list_id>')
 def specific_list(list_id):
@@ -261,7 +260,7 @@ def add_show_to_list(new_list_id, new_show_id):
     db.session.add(ShowListLink(list_id=new_list_id, show_id=new_show_id))
     db.session.commit()
     spec_show = Show.query.get(new_show_id)
-    return render_template("tv/tv.html", template_show=spec_show, template_lists = get_current_lists())
+    return render_template("show/show.html", template_show=spec_show, template_lists = get_current_lists())
 
 @app.route('/login')
 def login():
