@@ -17,7 +17,7 @@ Movies: https://en.wikipedia.org/wiki/List_of_zombie_films
 Shows: https://en.wikipedia.org/wiki/Category:Zombies_in_television
 
 Icon:
-Apple Zombie Emoji: https://emojipedia.org/apple/ios-11.1/zombie/ 
+Apple Zombie Emoji: https://emojipedia.org/apple/ios-11.1/zombie/
 
 To seed DB:
 from app import app, db
